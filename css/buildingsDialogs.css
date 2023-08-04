@@ -1,0 +1,336 @@
+.dialog_building {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70%;
+  width: 60%;
+  z-index: 999;
+  background-color: #00000063;
+  background-image: url("../src/backgrounds/bg2.jpg");
+  background-position: center;
+  background-size: cover;
+  border: min(0.5vw, 5px) inset #773421;
+  border-top-color: #a56243;
+  border-left-color: #a56243;
+  border-top-style: solid;
+  border-left-style: solid;
+}
+
+.dialog_building {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #000000;
+}
+.dialog_building * {
+  z-index: 3;
+}
+.dialog_building-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 25%;
+  padding: 5 0%;
+}
+.dialog_building-header--title {
+  color: rgb(255, 255, 255);
+  font-size: 5rem;
+  width: 50%;
+  font-family: "MedievalSharp";
+  text-transform: Capitalize;
+  text-align: center;
+  text-shadow: #000000b3 -2px -2px 5px, rgb(0, 0, 0) 2px 2px 10px;
+}
+.dialog_building-header--subtitle {
+  width: 15%;
+  color: rgb(255, 255, 255);
+  font-size: 1.9rem;
+  font-family: "MedievalSharp";
+  white-space: nowrap;
+  text-align: center;
+  text-shadow: #000000b3 2px 2px 10px, #000000b3 -2px -2px 5px, rgb(0, 0, 0) 2px 2px 10px;
+}
+.dialog_building-header--image {
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.dialog_building-content {
+  display: flex;
+  justify-content: space-between;
+  height: 75%;
+  padding: 0 2.5% 0 2.5%;
+}
+.dialog_building-content--trades {
+  gap: 2.5vh;
+  width: 100%;
+  height: 100%;
+  color: #ffffea;
+  font-size: 1.45vw;
+  overflow-y: scroll;
+  text-align: center;
+}
+.dialog_building-content--trades h1 {
+  align-self: flex-start;
+  width: 70%;
+  padding: 0 0 0.5rem 0;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  text-shadow: 0 0 15px #0000009b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.dialog_building-content--trades::-webkit-scrollbar {
+  width: 0;
+}
+.dialog_building-content--trade {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5.3vw;
+  padding: 0 0 0 2%;
+  margin-bottom: 1.3vw;
+  border: 3px outset #a56243;
+  border-radius: 5px;
+  background-color: #000000c5;
+  text-shadow: #212b77b3 2px 2px 10px, #000000b3 -2px -2px 5px, rgb(0, 0, 0) 2px 2px 10px;
+}
+.dialog_building-content--trade[data-currentamount="0"], .dialog_building-content--trade:has(.trade-amount[data-currentamount="0"]) {
+  display: none !important;
+}
+.dialog_building-content .trade-icon {
+  width: 64px;
+}
+.dialog_building-content .trade-amount {
+  display: flex;
+  align-items: center;
+  color: #feb728;
+}
+.dialog_building-content .trade-information {
+  display: flex;
+  align-items: center;
+  max-width: 67%;
+}
+.dialog_building-content .trade-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5%;
+  width: 35%;
+  padding-right: 2.5%;
+  font-size: 2rem;
+}
+.dialog_building-content .trade-buttons::before {
+  content: "| ";
+  color: #d09653;
+  font-size: 3rem;
+  transform: translateY(-7.5%);
+  text-shadow: none;
+}
+.dialog_building-content .trade-button {
+  width: 5rem;
+  aspect-ratio: 5/3;
+  color: white;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.dialog_building-content .closeButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 8rem;
+  aspect-ratio: 5/2;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  font-family: "MedievalSharp";
+  font-size: 1.6rem;
+  text-align: center;
+}
+@media (max-width: 1750px) {
+  .dialog_building-content--trades {
+    font-size: 1.35vw;
+  }
+  .dialog_building-content .trade-icon {
+    width: 48px;
+  }
+}
+@media (max-width: 1400px) {
+  .dialog_building-content .trade-icon {
+    width: 48px;
+  }
+}
+@media (max-width: 1200px) {
+  .dialog_building-content--trade {
+    border-width: 2px;
+  }
+  .dialog_building-content .trade-icon {
+    width: 36px;
+  }
+}
+@media (max-width: 900px) {
+  .dialog_building-header--title {
+    font-size: 4.2rem;
+  }
+  .dialog_building-header--subtitle {
+    font-size: 1.4rem;
+  }
+  .dialog_building-content--trades {
+    font-size: 1.3vw;
+  }
+  .dialog_building-content--trades h1 {
+    font-size: 1.7rem;
+  }
+  .dialog_building-content .trade-icon {
+    width: 30px;
+  }
+  .dialog_building-content .trade-buttons {
+    font-size: 1.8rem;
+  }
+  .dialog_building-content .trade-button {
+    font-size: 1.6rem;
+    border-width: 1px;
+  }
+  .dialog_building-content .closeButton {
+    width: 6.5rem;
+    border-width: 1px;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 800px) {
+  .dialog_building-header--title {
+    font-size: 3.8rem;
+  }
+  .dialog_building-content--trades {
+    font-size: 1.2vw;
+  }
+  .dialog_building-content .trade-buttons {
+    font-size: 1.6rem;
+  }
+  .dialog_building-content .trade-button {
+    font-size: 1.4rem;
+  }
+  .dialog_building-content--trade {
+    border-width: 1px;
+  }
+  .dialog_building-content .closeButton {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 700px) {
+  .dialog_building-header--title {
+    font-size: 3.5rem;
+  }
+  .dialog_building-header--subtitle {
+    font-size: 1.2rem;
+  }
+  .dialog_building-content--trades h1 {
+    font-size: 1.5rem;
+  }
+  .dialog_building-content .trade-icon {
+    width: 24px;
+  }
+  .dialog_building-content .trade-buttons {
+    font-size: 1.4rem;
+  }
+  .dialog_building-content .trade-button {
+    font-size: 1.2rem;
+  }
+  .dialog_building-content .trade-buttons::before {
+    font-size: 2rem;
+  }
+  .dialog_building-content .closeButton {
+    width: 6.3rem;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 620px) {
+  .dialog_building-header--title {
+    font-size: 3rem;
+  }
+  .dialog_building-header--subtitle {
+    font-size: 0.9rem;
+  }
+  .dialog_building-content--trades h1 {
+    font-size: 1.25rem;
+  }
+  .dialog_building-content .trade-icon {
+    width: 20px;
+  }
+  .dialog_building-content .trade-buttons {
+    font-size: 1.2rem;
+  }
+  .dialog_building-content .trade-button {
+    font-size: 1rem;
+  }
+  .dialog_building-content .closeButton {
+    width: 5.4rem;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 520px) {
+  .dialog_building-header--title {
+    font-size: 2.3rem;
+  }
+  .dialog_building-header--subtitle {
+    font-size: 0.8rem;
+  }
+  .dialog_building-content--trades h1 {
+    font-size: 1.05rem;
+  }
+  .dialog_building-content .trade-buttons {
+    font-size: 1rem;
+  }
+  .dialog_building-content .trade-button {
+    font-size: 0.9rem;
+  }
+  .dialog_building-content .trade-icon {
+    width: 16px;
+  }
+  .dialog_building-content .trade-buttons::before {
+    font-size: 1.25rem;
+  }
+  .dialog_building-content .closeButton {
+    width: 4.5rem;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 400px) {
+  .dialog_building-header--title {
+    font-size: 1.6rem;
+  }
+  .dialog_building-header--subtitle {
+    font-size: 0.6rem;
+  }
+  .dialog_building-content--trades h1 {
+    font-size: 0.95rem;
+  }
+  .dialog_building-content .trade-buttons {
+    font-size: 0.8rem;
+  }
+  .dialog_building-content .trade-button {
+    font-size: 0.7rem;
+  }
+  .dialog_building-content .trade-icon {
+    width: 14px;
+  }
+  .dialog_building-content .closeButton {
+    width: 3.7rem;
+    font-size: 0.7rem;
+  }
+}
+
+.dialog_building::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: #7440182a;
+}
+
+/*# sourceMappingURL=buildingsDialogs.css.map */

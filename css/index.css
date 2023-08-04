@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "MedievalSharp";
+  src: url("../src/fonts/MedievalSharp-Regular.ttf");
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-image: url("../src/backgrounds/background.jpg");
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+  position: relative;
+  isolation: isolate;
+  cursor: url("../src/other/cursor.png"), auto;
+}
+body .hero {
+  position: absolute;
+  inset: 0;
+  background-color: #000000d9;
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  aspect-ratio: 16/8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 79vw;
+  margin: 0 auto;
+}
+
+button {
+  border-style: inset;
+  border-color: #773421;
+  border-top-color: #a56243;
+  border-left-color: #a56243;
+  border-top-style: solid;
+  border-left-style: solid;
+  background-color: #45230d;
+  background-image: url("../src/backgrounds/btn1.jpg");
+  cursor: url("../src/other/pointer.png"), pointer;
+}
+
+button:hover {
+  border-image: url("../src/backgrounds/border2.jpg") 25;
+  background-image: url("../src/backgrounds/btn2.jpg");
+}
+
+button:active {
+  border-image: url("../src/backgrounds/border1.jpg") 25;
+  background-image: url("../src/backgrounds/btn1.jpg");
+}
+
+@media (max-width: 1800px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1600px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1400px) {
+  :root {
+    font-size: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
