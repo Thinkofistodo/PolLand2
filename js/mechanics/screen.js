@@ -22,6 +22,7 @@ function loseScreenButtonsADDFUN(){
   
     goToMenu.addEventListener("click", async () => {
         isSaved = true
+        isResourcesDialogOpen = false
         goBackToMenu();
         setTimeout(()=>{hideEndScreen()}, 1000) 
     })
