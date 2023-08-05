@@ -1,0 +1,67 @@
+.endScreen {
+    position: absolute;
+    inset: 0;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 12.5%;
+    background-color: rgb(0, 0, 0, 0.9);
+    z-index: 99999;
+    gap: 3em;
+    font-size: 1rem;
+
+    &_title {
+        font-size: 4em;
+        max-width: 60%;
+        text-align: center;
+        font-family: "MedievalSharp";
+    }
+
+    &_reason {
+        max-width: 50%;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    &_buttonsContainer {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        button {
+            padding: 0.5em 2em;
+            font-size: 1.3em;
+            color: white;
+        }
+    }
+
+    @media (max-width: 1400px){
+        font-size: 1.3rem;
+    }
+
+    @media (max-width: 1200px){
+        padding-top: 30%;
+        &_buttonsContainer {
+            width: auto;
+            gap: 5%;
+        }
+    }
+
+    @media (max-width: 800px){
+        font-size: 1.3rem;
+        padding-top: 40%;
+    }
+
+    @media (max-width: 600px){
+        font-size: 1rem;
+        padding-top: 50%;
+        &_title {
+            font-size: 4em;
+        }
+    }
+    
+    
+}
+
+
+

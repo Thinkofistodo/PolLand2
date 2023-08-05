@@ -22,7 +22,7 @@ function loseScreenButtonsADDFUN(){
   
     goToMenu.addEventListener("click", async () => {
         isSaved = true
-        goBackToMenu()();
+        goBackToMenu();
         setTimeout(()=>{hideEndScreen()}, 1000) 
     })
 
@@ -33,6 +33,10 @@ function loseScreenButtonsADDFUN(){
             isResourcesDialogOpen = false
             hideMenu()
             hideEndScreen()
+            container.innerHTML = ""
+            buildings.innerHTML = ""
+            for (const dialog of [...document.querySelectorAll(".dialog_single")]) dialog.remove()
+            
             startGame("reset")
         }, 1000) 
         

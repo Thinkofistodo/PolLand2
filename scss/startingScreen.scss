@@ -1,0 +1,71 @@
+@import "variables";
+.clickToStart {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background-color: black;
+    z-index: 99999;
+    opacity: 1;
+    animation: showAndHideLogo 7s forwards;
+    &_text {
+        font-size: clamp(1.25rem, calc(0.75rem + 2.50vw), 3.75rem);;
+        font-family: "MedievalSharp";
+        padding: 3em;
+        transform: translateY(-5%);
+        animation: textOpacity 7s;
+    }
+    &_text:hover {
+        color: $b-grad-6;
+
+        cursor: url('../src/other/pointer.png'), pointer;
+    }
+}
+
+
+.bird {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    background-image: url("../src/backgrounds/bird.png");
+    background-position: center;
+    background-size: cover;
+    z-index: 99998;
+}
+
+@keyframes textOpacity {
+    0% {
+        color: black;
+    }
+    99% {
+        color: black;
+    }
+    100% {
+        color: white;
+    }
+}
+
+
+@keyframes showAndHideLogo {
+    0% {
+        opacity: 1;
+    }
+    15% {
+        opacity: 1;
+    }
+    
+    35% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 1;
+        color: black;
+    }
+    100% {
+        opacity: 1;
+        color: white;
+    }
+}
