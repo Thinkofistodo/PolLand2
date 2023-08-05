@@ -15,22 +15,14 @@ const events = {
             title: "Flooded Granary",
             text: "After yesterday's storm, a fungus has taken hold in one of our granaries. Water seeped in through the roof, damaging our precious food supplies. Much was salvaged, but unfortunately, a portion is no longer fit for even the animals.",
             resources: {
-<<<<<<< HEAD
-                food: -5
-=======
                 food: -3
->>>>>>> cd0ae3922d304ec2bb9668cd0fb6fa2aca23da1a
             }
         },
         {
             title: "Wolf Attack",
             text: "Last night, a pack of wolves infiltrated one of our granaries. Fortunately, there are no casualties among the people, but we've lost some food supplies.",
             resources: {
-<<<<<<< HEAD
-                food: -6
-=======
                 food: -4
->>>>>>> cd0ae3922d304ec2bb9668cd0fb6fa2aca23da1a
             }
         },
         {
