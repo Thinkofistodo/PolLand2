@@ -1,0 +1,443 @@
+@import "variables";
+.dialog_small {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    aspect-ratio: 4 / 2.25;
+
+    display: flex;
+    flex-direction: column;
+    background-image: url("../src/backgrounds/loading2.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 999;
+    padding: 0.8vw;
+    text-shadow:
+            // rgba(0, 0, 0, 0.7) 2px 2px 10px,
+            rgba(0, 0, 0, 0.7) -2px -2px 5px,
+            rgb(0, 0, 0) 2px 2px 10px;
+
+    border: min(0.4vw,5px) inset $b-grad-3;
+    border-top-color: $b-grad-4;
+    border-left-color: $b-grad-4;
+    border-top-style: solid;
+    border-left-style: solid;
+    
+    color: white;
+    * {
+      z-index: 3;
+    }
+    button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      aspect-ratio: 2.5 / 1;
+      width: 13%;
+      font-size: 1.3rem;
+  
+      text-transform: capitalize;
+      color: white;
+      font-family: sans-serif;
+      border-width: min(0.18vw,2px);
+    
+  }
+}
+
+.dialog_small::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(7, 66, 118, 0.06);
+}
+
+.dialog_single {
+  text-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  color: $dialog-color;
+
+      &-title {
+        text-transform: capitalize;
+        font-family: "MedievalSharp";
+        letter-spacing: 2.5px;
+        margin: 0.5em 0 0.5em 0;
+        font-size: 2.5em;
+        margin-inline: auto;
+        text-align: center;
+      }
+      
+      &-content {
+        font-size: 1.4em;
+        max-width: 95%;
+        margin-inline: auto;
+        text-align: center;
+        text-shadow: none;
+        color: rgb(0, 0, 0);
+      }
+      &-footer {
+          position: relative;
+          height: 15%;
+          margin-top: auto;
+          button {
+            font-size: 1.4em;
+            left: 0;
+            bottom: 0;
+            margin-inline: auto;
+          }
+      }
+
+      @media (max-width: 1000px){
+        font-size: 0.9rem;
+        &-title {letter-spacing: 2px;}
+      }
+      @media (max-width: 900px){
+        font-size: 0.8rem;
+      }
+      @media (max-width: 800px){
+        font-size: 0.7rem;
+        &-title {letter-spacing: 1.5px};
+      }
+      @media (max-width: 700px){
+        font-size: 0.6rem;
+      }
+      @media (max-width: 600px){
+        font-size: 0.45rem;
+        &-title {letter-spacing: 1px;}
+      }
+      @media (max-width: 500px){
+        font-size: 0.4rem;
+        &-title {letter-spacing: 0.75px};
+      }
+      @media (max-width: 400px){
+        font-size: 0.3rem;
+      }
+}
+
+.dialog_chain {
+  padding: .5rem 1rem 1rem 1rem;
+  font-size: clamp(0.19rem, calc(-0.02rem + 1.06vw), 1.25rem);
+  background-image: url("../src/backgrounds/loading2.jpg");
+
+    &-titles--Container {
+        text-transform: uppercase;
+        height: 15%;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &-title {
+        font-family: "MedievalSharp";
+        font-size: 1.8em;
+        margin-top: 0.5em;
+      }
+
+      &-page {
+        font-family: "MedievalSharp";
+        font-size: 1.5em;
+      }
+
+      &-content {
+        padding-top: 2.5%;
+         height: 75%;
+         font-size: 1.1em;
+         color: black;
+         text-shadow: none;
+         
+      }
+
+      &-footer {
+          position: relative;
+          height: 10%;
+      }
+
+      &-previousButton {
+        left: 0;
+        font-size: 1.7em!important;
+      }
+
+      &-nextButton {
+        left: 15%;
+ 
+        font-size: 1.7em!important;
+      }
+
+      &-closeButton {
+        right: 0;
+        font-size: 1.3em!important;
+      }
+}
+
+.dialog_options {
+  gap: 8%;
+  width: 40vw;
+  padding: 2.5rem 3rem;
+  aspect-ratio: 4 / 2;
+  align-items: center;
+  text-transform: capitalize;
+  text-align: center;
+  max-height: 20vw!important;
+  button {
+    position: relative;
+    display: inline-block;
+    width: 10vw;
+    font-size:  1.4rem;
+    aspect-ratio: 8 / 2;
+    font-family: sans-serif;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  @media (max-width: 950px){
+    button {
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
+  @media (max-width: 550px){
+    button {
+      font-size: 0.5rem;
+    }
+    h1 {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.dialog_save {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  width: 40vw;
+  gap: 1vw;
+  aspect-ratio: auto;
+  height: auto;
+  padding: 2.5rem 3rem;
+  font-family: sans-serif;
+
+  div {
+    display: flex;
+    width: 50%;
+    gap: 2/25 * 20vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+  form {
+    gap: 2/25 * 20vw;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  input {
+    aspect-ratio: 8 / 2;
+    width: 10vw;
+    padding-left: 0.25vw;
+    font-size: 1rem;
+  }
+
+  button {
+    position: relative;
+    font-size:  1.4rem;
+    aspect-ratio: 8 / 2;
+    width: 10vw;
+  }
+  @media (max-width: 950px){
+    button {
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
+  @media (max-width: 550px){
+    button {
+      font-size: 0.5rem;
+    }
+    h1 {
+      font-size: 0.9rem;
+    }
+    input {
+      border: none;
+      font-size: 0.5rem;
+    }
+  }
+}
+
+.dialog_question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 30vw;
+  aspect-ratio: auto;
+  padding: 2.5em 1.5em;
+  gap: 1vw;
+  font-size: clamp(0.25rem, calc(-0.01rem + 1.30vw), 1.00rem);
+  h1 {
+
+    text-align: center;
+    font-family: sans-serif;
+  }
+  &-buttonWrap{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+    justify-content: space-around;
+  }
+  button.dialog_question-yesButton, button.dialog_question-noButton {
+    position: relative;
+    width: 5vw;
+    font-size: 1.2em;
+    right: auto;
+  }
+  
+}
+
+.dialog_question-menu {
+  width: 100%;
+  height: 100%;
+  border: none;
+  h1 {
+    font-size: 2rem;
+  }
+  button.dialog_question-yesButton, button.dialog_question-noButton {
+    width: 6vw;
+    text-transform: Capitalize;
+  }
+}
+
+.dialog_event {
+  background-image: none;
+  background-color: #00000000;
+  background-image: url("../src/backgrounds/loading2.jpg");
+  color: rgb(27, 24, 24);
+  border-left-color: $button-top-left-border;
+  border-top-color: $button-top-left-border;
+  border-right-color: $button-down-right-border;
+  border-bottom-color: $button-down-right-border;
+  justify-content: space-between;
+  img {
+    width: 3.5vw;
+  }
+  .dialog_single-content {
+    margin-top: 1em;
+  }
+  .dialog_single-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      font-size: 1.75em;
+      max-width: 80%;
+      margin-inline: auto;
+      text-align: center;
+      gap: 7.5%;
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: rgb(38, 97, 25);
+      }
+  }
+  .substract {
+    color: rgb(255, 55, 55);
+  }
+  
+}
+
+.dialog_eventChoice {
+  // justify-content: center;
+  .dialog_single-content {
+    margin-top: 0;
+  }
+ 
+  .dialog_single-items {
+    width: 100%;
+    margin: 0;
+    max-width: 100%;
+    justify-content: space-around;
+    gap: 0;
+    font-size: 1.5em;
+    & > div {
+      width: auto;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .dialog_single-footer {
+    height: auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+    .option1, .option2 {
+      position: relative;
+      min-width: 13%;
+      width: auto;
+    }
+
+   
+  }
+
+
+}
+
+.dialog_resources {
+  background-image: none;
+  background-color: #000000c2;
+  border-left-color: rgb(222, 222, 222);
+  border-top-color: rgb(222, 222, 222);
+  border-right-color: rgb(150, 150, 150);
+  border-bottom-color: rgb(150, 150, 150);
+  .dialog_single-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    color: white;
+    gap: 5%;
+  }
+  .dialog_resources-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+  }
+  img {
+    width: 3.5vw;
+  }
+
+  .dialog_single-title {
+    color: white;
+  }
+  &-quantity {
+    font-weight: bold;
+    // font-family: "MedievalSharp";
+    letter-spacing: 0.01em;
+    font-size: clamp(0.63rem, calc(0.44rem + 0.94vw), 1.56rem);
+  }
+  .substract {
+    color: rgb(255, 55, 55);
+  }
+}

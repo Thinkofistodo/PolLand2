@@ -1,0 +1,231 @@
+.dialog_fight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.555);
+}
+
+.dialog_fight {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../src/fields/swamp.jpg");
+  background-size: 7.5%;
+  background-repeat: repeat;
+  border-left-color: rgb(222, 222, 222);
+  border-top-color: rgb(222, 222, 222);
+  border-right-color: rgb(150, 150, 150);
+  border-bottom-color: rgb(150, 150, 150);
+}
+.dialog_fight button {
+  position: relative;
+}
+.dialog_fight-roles, .dialog_fight-field, .dialog_fight-battle, .dialog_fight-footer {
+  display: flex;
+}
+
+.dialog_fight-roles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+  font-size: clamp(0.63rem, 0.19rem + 2.17vw, 1.88rem);
+  font-family: "MedievalSharp";
+  color: rgb(233, 237, 255);
+}
+.dialog_fight-roles .you {
+  color: white;
+  font-size: 0.6em;
+}
+.dialog_fight-roles .attacker {
+  color: rgb(253, 40, 40);
+}
+
+.dialog_fight-field {
+  display: flex;
+  justify-content: space-between;
+  height: 15%;
+  padding-inline: 0.5em;
+  width: 100%;
+  margin-bottom: 1em;
+  font-size: clamp(0.38rem, 0.07rem + 1.52vw, 1.25rem);
+  align-items: center;
+}
+.dialog_fight-field--fieldDescription {
+  font-size: 1em;
+  color: white;
+}
+@media (width < 1000px) {
+  .dialog_fight-field--fieldDescription {
+    font-size: 0.9em;
+  }
+}
+@media (width < 1000px) {
+  .dialog_fight-field--fieldDescription {
+    font-size: 0.7em;
+  }
+}
+.dialog_fight-field--fieldType {
+  color: #4b8516;
+  text-transform: capitalize;
+}
+.dialog_fight-field--fieldIcon {
+  height: 100%;
+}
+
+.dialog_fight-switchButtons {
+  height: 10%;
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+}
+.dialog_fight-switchButtons button {
+  width: 23%;
+  background-image: url();
+  background-color: #c8c8c8;
+  border-left-color: rgb(255, 255, 255);
+  border-top-color: rgb(255, 255, 255);
+  border-right-color: rgb(139, 139, 139);
+  font-size: clamp(0.38rem, 0.07rem + 1.52vw, 1.25rem);
+  border-bottom-color: rgb(139, 139, 139);
+}
+.dialog_fight-switchButtons button img {
+  height: 95%;
+}
+.dialog_fight-switchButtons button:hover {
+  background-color: #e1e1e1;
+  border-image: none;
+  border-left-color: rgb(255, 255, 255) !important;
+  border-top-color: rgb(255, 255, 255) !important;
+  border-right-color: rgb(206, 206, 206) !important;
+  border-bottom-color: rgb(180, 180, 180) !important;
+}
+.dialog_fight-switchButtons button:active {
+  background-color: #c8c8c8;
+}
+
+.dialog_fight-battle {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 30%;
+  color: white;
+  font-size: clamp(0.25rem, -0.01rem + 1.3vw, 1rem);
+}
+.dialog_fight-battle > div {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 5%;
+  width: 45%;
+  height: 100%;
+}
+.dialog_fight-battle--unitContainer {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  transition: marginLeft 0.5s, marginRight 0.5s, margin 0.5s;
+}
+.dialog_fight-battle .enemyIcon {
+  transform: rotateY(180deg);
+}
+.dialog_fight-battle--unitIcon {
+  margin-top: auto;
+  max-width: 100%;
+}
+.dialog_fight-battle--buttonsContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5em;
+}
+.dialog_fight-battle--buttonsContainer button {
+  width: 80%;
+}
+.dialog_fight-battle--unitAmount {
+  font-size: bold;
+  font-size: 1.4em;
+}
+.dialog_fight-battle--VS {
+  align-self: center;
+}
+
+.dialog_fight-footer {
+  height: 20%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 1.2em;
+}
+.dialog_fight-footer--winResources {
+  align-items: center;
+  display: flex;
+}
+.dialog_fight-footer--loseResources {
+  display: flex;
+  align-items: center;
+}
+.dialog_fight-footer span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.dialog_fight-footer span:first-of-type {
+  margin-right: auto;
+  margin-right: 1em;
+}
+.dialog_fight-footer span img {
+  width: 60%;
+}
+.dialog_fight-footer button.dialog_fight-footer--fightButton {
+  left: 30%;
+  position: absolute;
+  transform: translateY(50%);
+  font-size: clamp(0.38rem, 0.07rem + 1.52vw, 1.25rem);
+}
+.dialog_fight-footer button.dialog_fight-footer--closeButton {
+  right: 30%;
+  position: absolute;
+  transform: translateY(50%);
+  font-size: clamp(0.38rem, 0.07rem + 1.52vw, 1.25rem);
+}
+
+@keyframes attack {
+  0% {
+    transform: translate(0, 0);
+    scale: 1;
+  }
+  50% {
+    transform: translate(10%, -15%);
+    scale: 1.2;
+  }
+  100% {
+    transform: translate(0, 0);
+    scale: 1;
+  }
+}
+@keyframes enemyAttack {
+  0% {
+    transform: translate(0, 0) rotateY(180deg);
+    scale: 1;
+  }
+  50% {
+    transform: translate(-10%, -15%) rotateY(180deg);
+    scale: 1.2;
+  }
+  100% {
+    transform: translate(0, 0) rotateY(180deg);
+    scale: 1;
+  }
+}
+
+/*# sourceMappingURL=fightDialog.css.map */

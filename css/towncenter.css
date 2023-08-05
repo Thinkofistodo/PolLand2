@@ -1,0 +1,134 @@
+.dialog_towncenter {
+  display: block;
+  background-image: url("../src/backgrounds/bg0.png");
+}
+.dialog_towncenter .dialog_building-content {
+  width: 100%;
+  height: 85%;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+.dialog_towncenter-hero {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.261);
+}
+.dialog_towncenter .dialog_building-header {
+  display: flex;
+  height: 15%;
+  padding-top: 2%;
+}
+.dialog_towncenter .dialog_building-header--title {
+  margin-bottom: 0.1em;
+  width: 100%;
+  font-size: 2em;
+}
+.dialog_towncenter .dialog_building-header--subtitle {
+  width: 100%;
+  margin-bottom: 0.2em;
+  text-align: center;
+}
+.dialog_towncenter-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.dialog_towncenter-button {
+  width: auto;
+  color: white;
+  font-size: 1.3rem;
+  padding: 0.45em 1em;
+  text-align: center;
+}
+.dialog_towncenter-informations {
+  width: 100%;
+  height: 100%;
+}
+.dialog_towncenter ::-webkit-scrollbar {
+  display: none;
+}
+
+.dialog_towncenter::after {
+  content: none;
+}
+
+.dialog_towncenter-buildings {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100%;
+  gap: 2.5%;
+}
+.dialog_towncenter-buildings--information {
+  width: 100%;
+  display: flex;
+}
+
+.dialog_towncenter-building {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.772);
+  border: 3px outset #a56243;
+  align-items: center;
+  border-radius: 5px;
+  padding: 1% 0.5%;
+}
+@media (width < 800px) {
+  .dialog_towncenter-building {
+    border-width: 1px;
+  }
+}
+.dialog_towncenter-building--image {
+  height: 70%;
+  max-width: 60%;
+}
+.dialog_towncenter-building .dialog_towncenter-wrap1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  font-family: "MedievalSharp";
+  font-size: clamp(0.5rem, 0.38rem + 0.63vw, 1.13rem);
+}
+.dialog_towncenter-building .dialog_towncenter-wrap23 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 80%;
+  gap: 0.5em;
+}
+.dialog_towncenter-building .dialog_towncenter-wrap2 {
+  width: 100%;
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+}
+.dialog_towncenter-building .dialog_towncenter-wrap2 > * {
+  width: 37.5%;
+}
+.dialog_towncenter-building .dialog_towncenter-wrap2 > :first-of-type {
+  width: 25%;
+}
+.dialog_towncenter-building .dialog_towncenter-wrap3 {
+  text-align: left;
+  font-family: "MedievalSharp";
+  overflow: hidden;
+}
+.dialog_towncenter-building--icon {
+  width: 18%;
+  aspect-ratio: 1/1;
+}
+.dialog_towncenter-building--text {
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.607);
+  text-align: left;
+  font-size: clamp(0.5rem, 0.38rem + 0.63vw, 1.13rem);
+}
+.dialog_towncenter-building .manual {
+  text-transform: capitalize;
+  font-style: italic;
+  color: rgb(50, 230, 239);
+}
+.dialog_towncenter-building .glow {
+  color: rgb(198, 239, 50);
+}
+
+/*# sourceMappingURL=towncenter.css.map */

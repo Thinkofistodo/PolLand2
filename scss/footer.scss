@@ -1,0 +1,206 @@
+@import "variables";
+
+footer {
+   width: 100%;
+   aspect-ratio: 16 / 2;
+   font-family: "MedievalSharp";
+}
+
+.buildings {
+   position: relative;
+
+   // BUILDING MENU TYPES BUTTONS
+   &_buttons {
+      position: absolute;
+      inset: 5px 5px 5px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      overflow-Y: hidden;
+      height: calc(100% - 10px);
+   }
+
+   &_button {
+      display: grid;
+      place-items: center;
+
+      width: 2.4vw;
+      max-width: 45px;
+      aspect-ratio: 1 / 1;
+
+              
+      background-image: url("../src/backgrounds/btn1.jpg");
+
+      color: $icon_color;
+      font-weight: bold;
+      font-size: 1.1rem;
+
+      &-icon {
+         width: 80%;
+      }
+   }
+
+   &_button:hover {
+      border-image: url('../src/backgrounds/border2.jpg') 25;
+      background-image: url("../src/backgrounds/btn2.jpg");
+      cursor: url('../src/other/pointer.png'), pointer;
+   }
+
+   &_button:active {
+      border-image: url('../src/backgrounds/border1.jpg') 25;
+      background-image: url("../src/backgrounds/btn1.jpg");
+   }
+
+   &_current {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 2.4vw;
+      max-width: 40px;
+      aspect-ratio: 1 / 1;
+      color: $icon-color;
+      overflow: hidden;
+
+      &-icon {
+         max-width: 80%;
+      }
+      [data-sectionnumber]{
+         display: grid;
+         place-items: center;
+         text-align: center;
+         width: 100%;
+         min-height: 100%;
+         font-size: 1.5rem;
+         transition: transform 0.4s;
+      }
+   }
+
+   // BUILDINGS SECTION
+   &_section {
+      position: absolute;
+      inset: 0;
+      // default hiding behind the game map
+      transform: translateY(-200%);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: min(1.6vw, 45px);
+
+      @media screen and (max-width: 1670px){
+         gap: 1.2vw;
+      }
+
+      margin-right: min(2.8vw, 50px);
+      padding-top: min(0.5vw, 10px);
+
+      transition: transform 0.4s;
+   }
+
+   &_section.notHidden {
+      transform: translateY(0);
+   }
+
+   // BUILDINGS BUILDING WRAP
+   &_building {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 12%;
+      height: 100%;
+      cursor: url('../src/other/pointer.png'), pointer;
+      
+      &-icon {
+         width: 4.5vw;
+         max-width: 85px;
+         margin: 5px 0 0 0;
+      }
+      &-title, &-cost {
+         text-align: center;
+         color: $icon-color;
+      }
+
+      &-title {
+         font-size: min(1.2vw, 1.5rem);
+         text-transform: capitalize;
+      }
+      &-cost {
+         display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+         max-width: 130px;
+         align-content: center;
+         justify-content: space-evenly;
+         overflow: hidden;
+      }
+
+      @media(max-width: 1757px){
+         &-cost {
+            font-size: 0.8vw;
+         }
+      }
+
+      .costIconSize {
+         max-height: 50%;
+         width: min(1.75vw,35px);
+      }
+
+      .costWrap {
+         width: calc(50% - 5px);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         // @TODO CHANGE GAP
+         gap: 5px;
+         font-size: min(0.95vw, 1.1rem);
+      }
+      .costWrap:nth-of-type(2n){
+         margin-left: min(0.003vw, 5px);
+      }
+
+      .tooLongTitle {
+         position: relative;
+         transform: translateY(-40%);
+      }
+      .tooLongTitle::after {
+         content: attr(data-subtitle);
+         position: absolute;
+         bottom: -100%;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+      @media screen and (max-width: 1000px) {
+         .tooLongCost {
+            transform: translateY(-50%);
+         }
+      }
+   }
+
+   &_building:hover &_building-icon {
+      filter: drop-shadow(0px 0px 15px rgb(50, 230, 239));
+   }
+   &_building.clickableBuilding:hover &_building-icon {
+      filter: drop-shadow(0px 0px 15px rgb(198, 239, 50));
+   }
+}
+
+.locked {
+   display: none!important;
+}
+
+.cancel {
+   position: absolute;
+   inset: 0 -0.325% 0 -0.325%;
+   background-color: #021623cf;
+   z-index: 999;
+   // border: 3px solid red;
+   display: grid;
+   place-items: center;
+   font-size: 2rem;
+   color: white;
+   text-shadow: 5px 5px 15px #000;
+   cursor: url('../src/other/pointer.png'), pointer;
+}

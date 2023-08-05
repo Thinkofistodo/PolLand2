@@ -1,0 +1,217 @@
+@import "variables";
+
+aside.resources {
+    width: 10%;
+    // height of the footer and main (their width x their sum of aspect ratio)
+    height: 79vw * 10 / 16;
+    // padding bottom equals the height of the footer (footer's width * it's aspect ratio)
+    // it had to be that way to make aside be exactly next to main
+    padding-bottom: 79vw * 2 / 16;
+    // font-family: "MedievalSharp";
+} 
+
+
+
+.resources {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    // RESOURCES
+    &_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &_resource {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-left: 10%;
+
+        &-icon {
+            width: 30%;
+            margin-right: min(0.6vw, 10px);
+            max-width: 45px;
+        }
+
+        &-text {
+            font-size: min(0.95vw, 1.03rem);
+            margin-right: min(0.3vw, 4px);
+            font-weight: bold;
+            color: #0000;
+            max-width: 142px;
+        }
+
+        .colorWhite {
+            color: rgb(225, 225, 225)!important;
+        }
+
+        @media screen and (max-width: 1850px) {
+            margin-left: 5%;
+            &-icon {width: 25%}
+            &-text {font-size: 0.8vw}
+        }
+    }
+    
+
+    // BUTTONS
+    &_buttons {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        // height of the footer (footer's width * it's aspect ratio)
+        height: 79vw * 2 / 16;
+        &-icon {
+            width: 100%;
+            padding: 10%;
+            aspect-ratio: 1 / 1;
+        }
+        button {
+            display: grid;
+            place-items: center;
+        }
+
+        // PORY ROKU
+        &-seasons {
+            position: absolute;
+            top: 40%;
+            width: 53%;
+            aspect-ratio: 1 / 1;
+            cursor: url('../src/other/pointer.png'), pointer;
+        }
+    }
+
+    &_buttons-left, &_buttons-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: min(0.45vw, 5%);
+        width: 100%;
+      
+        &--wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: min(0.45vw, 5%);
+            width: 100%;
+        }
+
+        button {
+            margin-top: 2px;
+            width: 49px;
+            max-width: 30%;
+            aspect-ratio: 1 / 1;
+
+            cursor: url('../src/other/pointer.png'), pointer;
+            background-color: $button-background;
+
+            background-image: url("../src/backgrounds/btn1.jpg");
+        }
+
+        button:hover {
+            border-image: url('../src/backgrounds/border2.jpg') 25;
+            background-image: url("../src/backgrounds/btn2.jpg");
+        }
+
+        button:active {
+            border-image: url('../src/backgrounds/border1.jpg') 25;
+            background-image: url("../src/backgrounds/btn1.jpg");
+        }
+
+        [data-move="up"]{
+            transform: rotate(180deg);
+        }
+        [data-move="left"]{
+            transform: rotate(90deg);
+        }
+        [data-move="right"]{
+            transform: rotate(-90deg);
+        }
+        
+    }
+
+    &_buttons-left {
+        transform: translateX(0.15vw);
+        button {
+            width: 47px;
+        }
+    }
+
+    &_buttons-right--wrap {
+            align-items: flex-start;
+            height: 100%;
+            margin-top: 5px;
+    }
+
+}
+
+.resource_right {
+    .resources_resource {
+        justify-content: flex-end;
+        margin-right: 10%;
+        margin-left: 0;
+         @media screen and (max-width: 1850px) {
+            margin-right: 5%;
+        }
+    }
+}
+
+
+
+// CLOCK FLIPPING
+.resources_buttons-seasons {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.turnSide, .seasonSide {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 10%;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: clamp(0.50rem, calc(0.25rem + 1.25vw), 1.75rem);
+    color: black;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../src/icons/seasons.png");
+    border: min(0.2vw,4px)  inset $button-down-right-border;
+    border-right-color: $b-grad-5;
+    border-left-color: $b-grad-5;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-radius: 50%;
+
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transition: transform 1s, -webkit-transform 1s;
+}
+
+.rotateSide {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
+
+.seasonIcon, .turnIcon {
+    height: 25%;
+}
+
+.turnSide {
+    background-image: url("../src/backgrounds/loading2.jpg");
+}
+

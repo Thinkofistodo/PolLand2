@@ -1,0 +1,198 @@
+.dialog_barracks {
+  display: flex;
+  flex-direction: row;
+}
+.dialog_barracks .barracksContainer {
+  width: 73%;
+}
+.dialog_barracks .dialog_building-header {
+  justify-content: space-between;
+  padding: 0 4%;
+  width: 100%;
+}
+.dialog_barracks .dialog_building-content--trades {
+  width: 100%;
+}
+.dialog_barracks .dialog_building-content--trade {
+  width: 100%;
+  justify-content: space-between;
+}
+.dialog_barracks .dialog_building-content--trade .trade-button {
+  width: auto;
+  font-size: 1.3rem;
+  aspect-ratio: 6/3;
+  padding: 0 0.5rem;
+  letter-spacing: 0.4px;
+}
+.dialog_barracks .dialog_building-content--trade .trade-buttons::before {
+  content: "";
+}
+.dialog_barracks .dialog_building-content--trade .trade-buttons,
+.dialog_barracks .dialog_building-content--trade .trade-information {
+  width: auto;
+  max-width: 100%;
+}
+@media (max-width: 1200px) {
+  .dialog_barracks .dialog_building-content--trade {
+    border-width: 2px;
+  }
+}
+@media (max-width: 900px) {
+  .dialog_barracks .dialog_building-content--trade {
+    font-size: 1.3vw;
+  }
+  .dialog_barracks .dialog_building-content--trade .trade-button {
+    font-size: 1.2rem;
+    border-width: 1px;
+  }
+}
+@media (max-width: 800px) {
+  .dialog_barracks .dialog_building-content--trade {
+    font-size: 1.2vw;
+    border-width: 1px;
+  }
+  .dialog_barracks .dialog_building-content--trade .trade-button {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 700px) {
+  .dialog_barracks .dialog_building-content--trade .trade-button {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 620px) {
+  .dialog_barracks .dialog_building-content--trade .trade-button {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 520px) {
+  .dialog_barracks .dialog_building-content--trade .trade-button {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 400px) {
+  .dialog_barracks .dialog_building-content--trade .trade-button {
+    font-size: 0.5rem;
+  }
+}
+
+.dialog_building-content--information {
+  width: 28%;
+  margin: 0.25rem;
+  text-align: center;
+  color: white;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-around;
+  border: min(0.4vw, 3px) outset #a56243;
+  border-radius: 5px;
+  background-color: #000000c5;
+  flex-direction: column;
+}
+
+.information_title {
+  font-family: "MedievalSharp";
+  font-size: 1.5rem;
+}
+
+.armyNumber {
+  font-size: 1rem;
+}
+
+.information_container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.information_container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.information_icon {
+  width: 3rem;
+}
+
+.information_icon-svg {
+  width: 1.2rem;
+}
+
+@media (max-width: 1000px) {
+  .information_title {
+    font-size: 1.25rem;
+  }
+
+  .information_icon {
+    width: 2.5rem;
+  }
+}
+@media (max-width: 740px) {
+  .information_title {
+    font-size: 1rem;
+  }
+
+  .information_icon {
+    width: 2rem;
+  }
+
+  .dialog_building-content--information {
+    font-size: 1.1rem;
+  }
+
+  .information_icon-svg {
+    width: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .information_title {
+    font-size: 0.8rem;
+  }
+
+  .information_icon {
+    width: 1.5rem;
+  }
+
+  .dialog_building-content--information {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .information_title {
+    font-size: 0.6rem;
+  }
+
+  .information_icon {
+    width: 1.2rem;
+  }
+
+  .dialog_building-content--information {
+    font-size: 0.8rem;
+  }
+
+  .information_icon-svg {
+    width: 0.8rem;
+  }
+}
+@media (max-width: 355px) {
+  .information_title {
+    font-size: 0.6rem;
+  }
+
+  .information_icon {
+    width: 1rem;
+  }
+
+  .dialog_building-content--information {
+    font-size: 0.8rem;
+  }
+
+  .information_icon-svg {
+    width: 0.6rem;
+  }
+}
+
+/*# sourceMappingURL=barracks.css.map */

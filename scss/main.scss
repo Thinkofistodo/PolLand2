@@ -1,0 +1,106 @@
+@import "variables";
+main {
+    position: relative;
+    //  @TO-DO 5px border dodać jako % od width
+    border:  min(0.5vw,5px) inset #773421;
+    border-top-color: #a56243;
+    border-left-color: #a56243;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+
+.game_content {
+    width: 79vw;
+    height: calc(79vw / 2);
+    z-index: 2;
+    overflow: hidden;
+    position: relative;
+    box-sizing: content-box;
+    background-color: #263326;
+    background-image: url("../src/backgrounds/bg0.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &-fields {
+        display: grid;
+        gap: 0;
+        column-gap: 0;
+        row-gap: 0;
+        // SIZE OF THE SINGLE FIELD
+        $size: calc(1 / 30 * 79vw);
+        // setting templates based on variables set by js map congif file
+        grid-template-columns: repeat(var(--columns), $size);
+        grid-template-rows: repeat(var(--rows), $size);
+
+        // moving map based on the variables set by js file and sizes of fields
+        transform: translate(calc(var(--shiftX) * $size), calc(var(--shiftY) * $size));
+        transition: transform .2s linear;
+        cursor: url('../src/other/pointer.png'), pointer;
+    }
+
+    &-field {
+        background-size: cover;  
+    }  
+
+
+    &-field:hover {
+        filter: brightness(1.30);
+    }
+    &-field:hover::before {
+        background-color: transparent;
+    }
+}
+
+.day, .error {
+    position: absolute;
+    z-index: 1000;
+}
+
+.error {
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 2px 6px rgb(85, 51, 6);
+    text-align: center;
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 1;
+}
+
+.day {
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 1);
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    text-transform: capitalize;
+}
+
+.transformError, .invisible {
+    opacity: 0;
+}
+
+.invisible {
+    display: none;
+}
+.marginLRAuto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+    transform: translateX(-100%)!important;
+}
+
+.showDayText {
+    opacity: 1;
+}
+
+.error.showDayText {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.displayNoneDayText {
+    display: none;
+}
