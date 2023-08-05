@@ -129,8 +129,10 @@ function construct(fields, index, check = true) {
     // ADD Dialog functionality
     if (fields[index].dataset.listener !== "true") {
         game.lastFieldBuildedOnListener = "none";
-        fields[index].addEventListener("click", () => createBuildingDialog(fields[index]))
+        if (!fieldsThatAlreadyHasListener.includes(index))
+            fields[index].addEventListener("click", () => createBuildingDialog(fields[index]))
         fields[index].dataset.listener = "true"
+        fieldsThatAlreadyHasListener.push(index);
     }
 
 }

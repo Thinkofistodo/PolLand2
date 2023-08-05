@@ -1,5 +1,6 @@
 const error = document.querySelector(".error")
 let isDialogOpen = false
+let fieldsThatAlreadyHasListener = []
 
 function generateRandomInteger(max) {
     return Math.floor(Math.random() * max) + 1;
