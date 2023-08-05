@@ -29,8 +29,8 @@ const events = {
             title: "Fruitful Waters",
             text: "The adjacent waters, swollen by recent heavy rains, have significantly nourished our lands. Consequently, the crops we're currently harvesting have flourished magnificently.",
             resources: {
-                wheat: 4,
-                cotton: 4,
+                wheat: 2,
+                cotton: 2,
             }
         }
     ],
@@ -103,8 +103,8 @@ const events = {
             option1: {
                 type: ChoiceEventTypes.resources,
                 resources: {
-                    leather: 4,
-                    coins: -12
+                    leather: 2,
+                    coins: -5
                 },
                 buttonText: "Accept"
             },
@@ -120,8 +120,8 @@ const events = {
             option1: {
                 type: ChoiceEventTypes.resources,
                 resources: {
-                    iron_ore: 6,
-                    coins: -12
+                    iron_ore: 4,
+                    coins: -8
                 },
                 buttonText: "Accept"
             },
@@ -137,8 +137,8 @@ const events = {
             option1: {
                 type: ChoiceEventTypes.resources,
                 resources: {
-                    string: 8,
-                    coins: -16
+                    string: 4,
+                    coins: -6
                 },
                 buttonText: "Accept"
             },
@@ -154,8 +154,8 @@ const events = {
             option1: {
                 type: ChoiceEventTypes.resources,
                 resources: {
-                    string: 8,
-                    coins: -16
+                    coal: 6,
+                    coins: -6
                 },
                 buttonText: "Accept"
             },

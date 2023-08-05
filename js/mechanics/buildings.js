@@ -428,13 +428,15 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
         case "fisherman":
             if (!isCenter && changeCosts) add("nextResources", "food", -1 * Number(field.dataset.amount))
 
-            isWaterAround = 0, countFishermansAround = 0, isOnSwamp = 0
+            isWaterAround = 0, countFishermansAround = 0, isOnSwamp = 0, countWaterLandAround = 0
             for (const nearbyFieldID of nearbyFieldsID) {
-                if (fields[ID + nearbyFieldID].dataset.field === "water") isWaterAround = 1
+                if (fields[ID + nearbyFieldID].dataset.field === "water") isWaterAround += 1
                 if (fields[ID + nearbyFieldID].dataset.building === "fisherman") countFishermansAround++
             }
             if (field.dataset.field === "swamp") isOnSwamp = 1
             amount = 3 - countFishermansAround * 2 + isOnSwamp;
+            if (isWaterAround === 3) amount++;
+            if (isWaterAround === 4) amount += 2;
             if (isWaterAround === 0 || amount < 0) amount = 0;
             if (!isWaterAround) field.dataset.isFish = false
             field.dataset.amount = amount
@@ -711,7 +713,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             ;
             break;
         case "geologist":
-            game.cannotUndo = "geologist"
+            if (isCenter) game.cannotUndo = "geologist"
             if (isCenter && changeCosts) changeBuildingCost(building, "coins", 2, 0)
             break;
         case "ironworks":
