@@ -23,7 +23,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 if (fields[ID + nearbyField].dataset.building === "lumberjack") countLumberjacksAround++;
             }
 
-            amount = (amount + countForestFieldsAround / 2 - countLumberjacksAround)
+            amount = (amount + (countForestFieldsAround + 1) / 2 - countLumberjacksAround)
             amount = amount - (amount % 1);
             if (amount < 0) amount = 0
             field.dataset.amount = amount
@@ -238,14 +238,11 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             break
         case "sawmill":
-            if (!isCenter && changeCosts) {
-                removeAmounts(field, "sawmill")
-            }
+            if (!isCenter && changeCosts) removeAmounts(field, "sawmill")
 
             amount = 3, trade = "11", countLumberjacksAround = 0, countForestFieldsAround = 0;
             for (const nearbyFieldID of nearbyFieldsID) {
                 if (fields[ID + nearbyFieldID].dataset.building === "lumberjack") countLumberjacksAround++;
-                if (fields[ID + nearbyFieldID].dataset.building === "house") countHousesAround++;
                 if (fields[ID + nearbyFieldID].dataset.field === "forest") countForestFieldsAround++;
             }
 
@@ -265,11 +262,8 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 }
             })
 
-            if (isCenter && changeCosts) {
-                changeBuildingCost(building, "wood", 1, 1)
-            }
-
-            ;
+            if (isCenter && changeCosts) changeBuildingCost(building, "wood", 1, 1)
+            
             break
         case "mine":
             const whatIsBeingMined = field.dataset.metal
@@ -336,6 +330,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (isCenter && changeCosts) {
                 add("resources", "workers", 1)
                 add("maxResources", "workers", 1)
+                changeBuildingCost(building, "hammer", 1, 0)
                 changeBuildingCost(building, "wood", 3, 1)
                 changeBuildingCost(building, "planks", 3, 2)
                 changeBuildingCost(building, "stone", 3, 3)
@@ -358,10 +353,10 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                         resourcesList.push(["leather", 4])
                         break;
                     case "lumberjack":
-                        resourcesList.push(["wood", 9])
+                        resourcesList.push(["wood", 5])
                         break;
                     case "sawmill":
-                        resourcesList.push(["planks", 9])
+                        resourcesList.push(["planks", 8])
                         break;
                     case "mine":
                         if (fields[ID + nearbyFieldID].dataset.metal === "iron_ore") resourcesList.push(["iron_ore", 5])
@@ -372,11 +367,11 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                         resourcesList.push(["iron_bar", 5])
                         break;
                     case "charcoal":
-                        resourcesList.push(["coal", 5])
+                        resourcesList.push(["coal", 8])
                         break;
                     case "rope_maker":
                         resourcesList.push(["rope", 3])
-                        resourcesList.push(["string", 4])
+                        resourcesList.push(["string", 3])
                         break;
                     case "geologist":
                         if (fields[ID + nearbyFieldID].dataset.metal === "none") break;
@@ -416,7 +411,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             amount = ((countFarmlandsAround - countFarmlandsAround % 2) / 2)
             if (amount > 2) amount = 2
-            amount = amount + isOnSwamp + isCottonFieldAround + isWaterAround
+            amount = amount + isOnSwamp + isCottonFieldAround
             if (isWaterAround !== 1) amount = 0
 
             if (changeCosts) add("nextResources", "wheat", amount)
@@ -435,8 +430,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             }
             if (field.dataset.field === "swamp") isOnSwamp = 1
             amount = 3 - countFishermansAround * 2 + isOnSwamp;
-            if (isWaterAround === 3) amount++;
-            if (isWaterAround === 4) amount += 2;
+            if (isWaterAround >= 3) amount++;
             if (isWaterAround === 0 || amount < 0) amount = 0;
             if (!isWaterAround) field.dataset.isFish = false
             field.dataset.amount = amount
@@ -466,6 +460,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (isWaterAround && isMillAround) trade = "21"
             if (field.dataset.field === "swamp") amount--
 
+            if (amount > 6) amount = 5
 
             field.dataset.amount = amount
             field.dataset.trade = trade
@@ -498,7 +493,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             amount = countFarmlandsAround
             if (amount > 2) amount = 2
-            if (isOnSwamp === 1) amount += 2
+            if (isOnSwamp === 1) amount += 1
             isWaterAround === 0 ? amount = 0 : amount++;
             if (changeCosts) add("nextResources", "cotton", amount)
             field.dataset.amount = amount
@@ -508,22 +503,23 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             break
         case "granary":
             if (!isCenter && changeCosts) {
-                add("maxResources", "wheat", -10)
+                add("maxResources", "wheat", -15)
                 add("maxResources", "food", -10)
-                add("maxResources", "flour", -10)
+                add("maxResources", "flour", -15)
             }
+
 
             if (changeCosts) {
-                add("maxResources", "wheat", 10)
+                add("maxResources", "wheat", 15)
                 add("maxResources", "flour", 10)
-                add("maxResources", "food", 10)
+                add("maxResources", "food", 15)
             }
 
-
             if (isCenter && changeCosts) {
-                changeBuildingCost(building, "wood", 2, 0)
-                changeBuildingCost(building, "planks", 2, 1)
-                changeBuildingCost(building, "rope", 2, 2)
+                changeBuildingCost(building, "planks", 2, 0)
+                changeBuildingCost(building, "stone", 2, 1)
+                changeBuildingCost(building, "iron_bar", 1, 2)
+                changeBuildingCost(building, "wheat", 4, 3)
             }
             break;
         case "hunters_hut":
@@ -543,7 +539,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 leather = 1;
 
             if (countForestFieldsAround !== 0) {
-                if (countForestFieldsAround > 4) {
+                if (countForestFieldsAround >= 4) {
                     meat += 2
                     leather++
                 }
@@ -630,10 +626,11 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (!isCenter && changeCosts) {
                 removeAmounts(field, building);
             }
-
-            amount = 4, trade = "12", isWaterAround = 0, isMillAround = 0;
+            // using lumberjacks variable but counting bakeries, dont want to make another one
+            amount = 4, trade = "11", isWaterAround = 0, isMillAround = 0, countLumberjacksAround = 0;
             for (const nearbyFieldID of nearbyFieldsID) {
                 if (fields[ID + nearbyFieldID].dataset.building === "mill") isMillAround = 1;
+                if (fields[ID + nearbyFieldID].dataset.building === "bakery") countLumberjacksAround = 1
                 if (fields[ID + nearbyFieldID].dataset.field === "water") {
                     field.dataset.waterAccess = "true"
                     isWaterAround = 1
@@ -642,8 +639,9 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             if (!isWaterAround && field.dataset.waterAccess !== "true") field.dataset.waterAccess = "false"
             if (field.dataset.waterAccess === "true") isWaterAround = 1;
+            if (countLumberjacksAround === 1) amount += 2;
 
-            if (isMillAround) trade = "13"
+            if (isMillAround) trade = "12"
             if (field.dataset.field === "swamp") amount -= 2
             if (isWaterAround === 0) amount = 0
 
@@ -670,8 +668,10 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 removeAmounts(field, building)
             }
 
-            amount = 1, trade = "321", isWaterAround = 0
+            // lumberjacks are cotton fields
+            amount = 1, trade = "321", isWaterAround = 0, countLumberjacksAround = 0
             for (const nearbyFieldID of nearbyFieldsID) {
+                if (fields[ID + nearbyFieldID].dataset.building === "cotton_field") countLumberjacksAround = 1;
                 if (fields[ID + nearbyFieldID].dataset.field === "water") {
                     field.dataset.waterAccess = "true"
                     isWaterAround = 1
@@ -681,6 +681,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (!isWaterAround && field.dataset.waterAccess !== "true") field.dataset.waterAccess = "false"
             if (field.dataset.waterAccess === "true") isWaterAround = 1;
 
+            if (countLumberjacksAround === 1) amount++;
          
             if (field.dataset.field === "swamp") amount++
             if (isWaterAround === 0) amount = 0
@@ -719,7 +720,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
         case "ironworks":
             if (!isCenter && changeCosts) removeAmounts(field, building)
 
-            amount = 2, trade = "121", isIronworksAround = 0, isWaterAround = 0
+            amount = 2, trade = "131", isIronworksAround = 0, isWaterAround = 0
             for (const nearbyFieldID of nearbyFieldsID) {
                 if (fields[ID + nearbyFieldID].dataset.building === "ironworks") isIronworksAround++;
                 if (fields[ID + nearbyFieldID].dataset.field === "water") {
@@ -731,8 +732,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (!isWaterAround && field.dataset.waterAccess !== "true") field.dataset.waterAccess = "false"
             if (field.dataset.waterAccess === "true") isWaterAround = 1;
 
-            if (isIronworksAround > 2) amount = 2;
-            if (field.dataset.metal === "coal") trade = "111";
+            if (field.dataset.metal === "coal" || isIronworksAround > 2) trade = "121";
             if (!isWaterAround) amount = 0;
 
             field.dataset.amount = amount
@@ -741,6 +741,9 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             checkAmountAndCurrentAmount(building, trade, amount, {
                 iron_bar: {
                     input: ["coal", "iron_ore"]
+                },
+                hammer: {
+                    input: ["iron_bar", "coal"]
                 }
             })
 
@@ -754,7 +757,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             break;
         case "smithy":
             if (!isCenter && changeCosts) removeAmounts(field, building);
-            amount = 1, trade = "1111", isCharcoalAround = 1, isIronworksAround = 1, isWaterAround = 0
+            amount = 1, trade = "3111", isCharcoalAround = 1, isIronworksAround = 1, isWaterAround = 0
             for (const nearbyFieldID of nearbyFieldsID) {
                 if (fields[ID + nearbyFieldID].dataset.building === "charcoal") isCharcoalAround = 1;
                 if (fields[ID + nearbyFieldID].dataset.building === "ironworks") isIronworksAround = 1;
@@ -767,9 +770,8 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (!isWaterAround && field.dataset.waterAccess !== "true") field.dataset.waterAccess = "false"
             if (field.dataset.waterAccess === "true") isWaterAround = 1;
 
-            amount += isCharcoalAround + isIronworksAround
-
-            if (field.dataset.metal === "coal") trade = "1111";
+            if (isCharcoalAround || isIronworksAround || field.dataset.metal === "coal") trade = "2111";
+            
             if (!isWaterAround) amount = 0;
 
             field.dataset.amount = amount
@@ -793,9 +795,10 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             })
 
             if (isCenter && changeCosts) {
-                changeBuildingCost(building, "wood", 1, 1)
-                changeBuildingCost(building, "planks", 1, 2)
-                changeBuildingCost(building, "stone", 1, 3)
+                changeBuildingCost(building, "hammer", 1, 0)
+                changeBuildingCost(building, "wood", 2, 1)
+                changeBuildingCost(building, "planks", 2, 2)
+                changeBuildingCost(building, "stone", 2, 3)
             }
 
             break;
@@ -817,12 +820,8 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                         resourcesList.push(["bow", 2])
                         break;
                     case "barracks":
-                        resourcesList.push(["swords", 5])
-                        resourcesList.push(["axe", 5])
-                        break;
-                    case "castle":
-                        resourcesList.push(["swords", 10])
-                        resourcesList.push(["bow", 10])
+                        resourcesList.push(["swords", 3])
+                        resourcesList.push(["axe", 3])
                         break;
                     case "smithy":
                         resourcesList.push(["axe", 1])
@@ -835,20 +834,20 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                         resourcesList.push(["fishing_rod", 2])
                         break;
                     case "worker":
-                        resourcesList.push(["hammer", 2])
+                        resourcesList.push(["hammer", 3])
                         break;
                     case "rope_maker":
-                        resourcesList.push(["rope", 4])
-                        resourcesList.push(["string", 6])
+                        resourcesList.push(["rope", 3])
+                        resourcesList.push(["string", 3])
                         break;
                     case "lumberjack":
-                        resourcesList.push(["axe", 2])
+                        resourcesList.push(["axe", 1])
                         break;
                     case "sawmill":
                         resourcesList.push(["saw", 2])
                         break;
                     case "mine":
-                        resourcesList.push(["pickaxe", 2])
+                        resourcesList.push(["pickaxe", 1])
                         break;
                 }
             }
@@ -856,10 +855,10 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
 
             if (isCenter && changeCosts) {
-                changeBuildingCost(building, "wood", 2, 0)
-                changeBuildingCost(building, "planks", 2, 1)
-                changeBuildingCost(building, "stone", 2, 2)
-                changeBuildingCost(building, "rope", 2, 3)
+                changeBuildingCost(building, "wood", 4, 0)
+                changeBuildingCost(building, "planks", 4, 1)
+                changeBuildingCost(building, "stone", 4, 2)
+                changeBuildingCost(building, "leather", 4, 3)
             }
 
             for (const [singleResource, amount] of resourcesList) add("maxResources", singleResource, amount)
@@ -880,8 +879,8 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             if (isTownCenterAround) amount += 2
             if (isMarketPlaceAround) amount += 1
-            if (isChurchAround) amount = 1
             amount += Math.floor(countHousesAround / 2)
+            if (isChurchAround) amount = 1
 
             field.dataset.amount = amount
 
@@ -894,12 +893,15 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
         case "stable":
 
 
-            amount = 1, trade = "771", horseAmount = 3, isStableAround = 0;
+            amount = 1, trade = "771", horseAmount = 3, isStableAround = 0, countFarmlandsAround = 0
             for (const nearbyField of nearbyFieldsID) {
                 if (fields[ID + nearbyField].dataset.building === "stable") isStableAround++;
+                if (fields[ID + nearbyField].dataset.field === "wheat") countFarmlandsAround++;
             }
 
             if (isStableAround) horseAmount++
+            if (countFarmlandsAround > 0) trade = "661"
+            if (countFarmlandsAround > 2) trade = "551"
             if (field.dataset.field === "rocks" || field.dataset.field === "ore_field" || field.dataset.field === "swamp") horseAmount = 1;
 
             if (changeCosts) add("maxResources", "horse", horseAmount)
@@ -1001,6 +1003,7 @@ function cancelBuildingMechanic(field, building) {
         case "worker":
             add("resources", "workers", -1)
             add("maxResources", "workers", -1)
+            changeBuildingCost(building, "hammer", -1, 0)
             changeBuildingCost(building, "wood", -3, 1)
             changeBuildingCost(building, "planks", -3, 2)
             changeBuildingCost(building, "stone", -3, 3)
@@ -1033,12 +1036,13 @@ function cancelBuildingMechanic(field, building) {
             changeBuildingCost(building, "wood", -2, 0)
             break;
         case "granary":
-            add("maxResources", "wheat", -10)
-            add("maxResources", "food", -10)
+            add("maxResources", "wheat", -15)
+            add("maxResources", "food", -15)
             add("maxResources", "flour", -10)
-            changeBuildingCost(building, "wood", -2, 0)
-            changeBuildingCost(building, "planks", -2, 1)
-            changeBuildingCost(building, "rope", -2, 2)
+            changeBuildingCost(building, "planks", -2, 0)
+            changeBuildingCost(building, "stone", -2, 1)
+            changeBuildingCost(building, "iron_bar", -1, 2)
+            changeBuildingCost(building, "wheat", -4, 3)
             break;
         case "hunters_hut":
             add("nextResources", "leather", -1 * Number(field.dataset.amount2))
@@ -1073,18 +1077,19 @@ function cancelBuildingMechanic(field, building) {
             break;
         case "smithy":
             removeAmounts(field, building)
-            changeBuildingCost(building, "wood", -1, 1)
-            changeBuildingCost(building, "planks", -1, 2)
-            changeBuildingCost(building, "stone", -1, 3)
+            changeBuildingCost(building, "hammer", -1, 0)
+            changeBuildingCost(building, "wood", -2, 1)
+            changeBuildingCost(building, "planks", -2, 2)
+            changeBuildingCost(building, "stone", -2, 3)
             break;
         case "armory":
             resourcesList = JSON.parse(field.dataset.resourcesList)
             for (const [singleResource, amount] of resourcesList) add("maxResources", singleResource, -1 * amount)
             field.dataset.resourcesList = "[]"
-            changeBuildingCost(building, "wood", -2, 0)
-            changeBuildingCost(building, "planks", -2, 1)
-            changeBuildingCost(building, "stone", -2, 2)
-            changeBuildingCost(building, "rope", -2, 3)
+            changeBuildingCost(building, "wood", -4, 0)
+            changeBuildingCost(building, "planks", -4, 1)
+            changeBuildingCost(building, "stone", -4, 2)
+            changeBuildingCost(building, "leather", -4, 3)
             break
         case "church":
             add("nextResources", "coins", -1 * Number(field.dataset.amount))
