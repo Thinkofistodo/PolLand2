@@ -35,10 +35,11 @@ function cancelBuilding(){
 
 function undoBuilding(){
     if(isDialogOpen) return
-    if(game.spectatorMode) return displayError("You want to erase your mistakes not rememvering you are erased yourself.")
+    if(game.spectatorMode) return displayError("You want to erase your mistakes not remembering you are erased yourself.")
     if(game.cannotUndo === "marketplace") return displayError("You can't undo marketplace after you checked the trade.")
+    if(game.cannotUndo === "bordertower") return displayError("You can't unsee what you have seen")
     if(game.cannotUndo === "turn") return displayError("You can only undo a construction you made in the current turn.")
-    if(game.cannotUndo === "nothing") return displayError("You haven't build anything yet. Idiot.")
+    if(game.cannotUndo === "nothing") return displayError("You haven't build anything yet.")
     if(game.cannotUndo === "no") return displayError("You cannot undo the construction of more than one building")
     if(game.cannotUndo === "trade") return displayError("You cannot undo the building after you traded")
     if(game.cannotUndo === "geologist") return displayError("You cannot undo after placing geologist")
@@ -48,14 +49,14 @@ function undoBuilding(){
     cancelBuildingMechanic(fields[game.lastFieldBuildedOn], game.lastBuildedBuilding)
 
     game.currentChoosedBuilding = game.lastBuildedBuilding
-    add("resources", "unemployed", 1)
+    if(game.currentChoosedBuilding !== "house") add("resources", "unemployed", 1)
     add("resources", "workers", 1)
     changeResources(true)
 
     game.currentChoosedBuilding = "none"
 
     updateWhatChanged()
-    displayError("The building is demolished. The materials have been returned. People are dying.")
+    displayError("The building is demolished. The materials have been returned.")
     game.cannotUndo = "no"
 }
 

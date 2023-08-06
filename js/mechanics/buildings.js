@@ -235,7 +235,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 changeBuildingCost(building, "wood", 2, 0)
                 changeBuildingCost(building, "planks", 2, 1)
             }
-
+            game.cannotUndo = "bordertower" 
             break
         case "sawmill":
             if (!isCenter && changeCosts) removeAmounts(field, "sawmill")
@@ -409,7 +409,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (!isWaterAround && field.dataset.waterAccess !== "true") field.dataset.waterAccess = "false"
             if (field.dataset.waterAccess === "true") isWaterAround = 1;
 
-            amount = ((countFarmlandsAround - countFarmlandsAround % 2) / 2)
+            amount = ((countFarmlandsAround - countFarmlandsAround % 2) / 2) + 1
             if (amount > 2) amount = 2
             amount = amount + isOnSwamp + isCottonFieldAround
             if (isWaterAround !== 1) amount = 0
@@ -879,8 +879,9 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             if (isTownCenterAround) amount += 2
             if (isMarketPlaceAround) amount += 1
-            amount += Math.floor(countHousesAround / 2)
-            if (isChurchAround) amount = 1
+            amount += Math.floor(countHousesAround / 2 + 1)
+            if (isChurchAround) amount = Math.floor(amount / 2)
+            if (amount < 0) amount = 1
 
             field.dataset.amount = amount
 
@@ -974,7 +975,7 @@ function cancelBuildingMechanic(field, building) {
             if (getSeason() === "winter") add("nextResources", "coal", 1);
             add("nextResources", "food", people)
             add("resources", "people", -1 * people)
-            add("resources", "unemployed", -1 * people - 1)
+            add("resources", "unemployed", -1 * people)
             changeBuildingCost(building, "planks", -2, 0)
             break
         case "border_tower":
@@ -1032,7 +1033,7 @@ function cancelBuildingMechanic(field, building) {
             changeBuildingCost(building, "stone", -3, 1)
             break;
         case "cotton_field":
-            add("nextResources", "amount", -1 * Number(field.dataset.amount))
+            add("nextResources", "cotton", -1 * Number(field.dataset.amount))
             changeBuildingCost(building, "wood", -2, 0)
             break;
         case "granary":
