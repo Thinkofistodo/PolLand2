@@ -23,7 +23,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 if (fields[ID + nearbyField].dataset.building === "lumberjack") countLumberjacksAround++;
             }
 
-            amount = (amount + (countForestFieldsAround + 1) / 2 - countLumberjacksAround)
+            amount = (amount + countForestFieldsAround / 2 - countLumberjacksAround)
             amount = amount - (amount % 1);
             if (amount < 0) amount = 0
             field.dataset.amount = amount

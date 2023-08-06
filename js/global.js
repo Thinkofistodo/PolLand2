@@ -1,6 +1,7 @@
 const error = document.querySelector(".error")
 let isDialogOpen = false
 let fieldsThatAlreadyHasListener = []
+const logs = []
 
 function generateRandomInteger(max) {
     return Math.floor(Math.random() * max) + 1;
@@ -37,4 +38,16 @@ function shuffleArray(array) {
       array[i] = array[j];
       array[j] = temp;
     }
+}
+
+function readLogs() {
+    for (const log of logs) console.log(log);
+}
+
+function addLog(log) {
+    logs.push(log)
+}
+function clearLogs() {
+    logs.length = 0
+    console.clear()
 }

@@ -11,7 +11,7 @@ function generateMap() {
         const border = field[2] ?? "false"
         const type = types[`${field[0]}`]
         let metal = field[3] ?? ""
-
+    
         if (!metal) {
             switch (type) {
                 case "mountains":
@@ -49,7 +49,8 @@ function generateMap() {
     fields = [...document.querySelectorAll(".game_content-field")]
 
     game.map.forEach((field, index) => {
-        if (field[1] !== null && field[1] !== undefined) {
+        addLog(`field of index ${index} has building ${field[1]}`)
+        if (field[1] !== null && field[1] !== undefined && field[1] !== "none") {
             game.currentChoosedBuilding = field[1];
             construct(fields, index, false)
             setCurrentChoosedBuilding("none")
@@ -119,7 +120,6 @@ function construct(fields, index, check = true) {
 
     // Building info
     fields[index].dataset.building = game.currentChoosedBuilding
-    game.map[index][1] = game.currentChoosedBuilding
 
     //------------------------------------------BUILDING MECHANICS-------------------------------------
     buildingMechanic(fields[index], game.currentChoosedBuilding, true, check);

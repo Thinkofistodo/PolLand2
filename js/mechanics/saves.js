@@ -4,6 +4,8 @@ let isSaving = false
 
 function createSave(saveName) {
     let save = JSON.parse(JSON.stringify(game))
+    fields.forEach((field, index) => save.map[index] = field.dataset.building)
+
     save.name = saveName
     save.quest = 0
     const date = new Date()

@@ -72,7 +72,6 @@ function buildingsEventsADDFUN(){
     for (let index = 0; index < fields.length; index++) {
         fields[index].addEventListener("click", () => {
             construct(fields, index);
-            game.map[index][1] = game.currentChoosedBuilding
             setCurrentChoosedBuilding("none")
             cancel.classList.add("locked")
         })
