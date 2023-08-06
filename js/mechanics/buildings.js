@@ -234,8 +234,9 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (isCenter && changeCosts) {
                 changeBuildingCost(building, "wood", 2, 0)
                 changeBuildingCost(building, "planks", 2, 1)
+                game.cannotUndo = "bordertower" 
             }
-            game.cannotUndo = "bordertower" 
+            
             break
         case "sawmill":
             if (!isCenter && changeCosts) removeAmounts(field, "sawmill")
@@ -784,9 +785,6 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                     input: ["coal", "planks", "iron_bar"],
                 },
                 saw: {
-                    input: ["coal", "planks", "iron_bar"],
-                },
-                hammer: {
                     input: ["coal", "planks", "iron_bar"],
                 },
                 swords: {

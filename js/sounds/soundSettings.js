@@ -147,4 +147,4 @@ for (const button of buttons) {
     button.addEventListener("click", playClick)
 }
 
-setVolume(50)
+setVolume(35)
