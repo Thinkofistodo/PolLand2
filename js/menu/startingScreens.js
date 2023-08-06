@@ -9,8 +9,3 @@ function hideStartingScreens() {
 
 clickToStart.addEventListener("click", hideStartingScreens)
 bird.addEventListener("click", hideStartingScreens)
-
-// Usunąć na koniec
-clickToStart.style = "display: none";
-bird.style = "display: none";
-currentPlaying.play();
