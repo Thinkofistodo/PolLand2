@@ -22,15 +22,9 @@ function generateMap() {
                 case "ore_field":
                     metal = "iron_ore"
                     break
-                case "rocks":
-                    metal = "stone"
-                    break
                 default:
-                    let randomNumber = generateRandomInteger(10);
-                    if (randomNumber === 10 || randomNumber === 9) metal = "iron_ore"
-                    else if (randomNumber === 8 || randomNumber === 7) metal = "coal"
-                    else if (randomNumber === 1) metal = "coins"
-                    else metal = "stone"
+                    metal = "stone"
+                    break;
             }
         }
         game.map[id][3] = metal 

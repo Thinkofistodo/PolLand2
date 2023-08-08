@@ -9,7 +9,7 @@ function changeSeason() {
         if (getSeason() === "winter") {
 
             const houses = [...document.querySelectorAll("[data-building=house]")]
-            add("nextResources", "coal", -1 * houses.length)
+            add("nextResources", "coal", -2 * houses.length)
             const fishermans = [...document.querySelectorAll("[data-building=fisherman]")]
             const amounts = fishermans.reduce((prev, next)=> {
                 return prev + Number(next.dataset.amount)
@@ -27,7 +27,7 @@ function changeSeason() {
     
         if (getSeason() === "spring") {
             const houses = [...document.querySelectorAll("[data-building=house]")]
-            add("nextResources", "coal", houses.length)
+            add("nextResources", "coal", 2 * houses.length)
             const fishermans = [...document.querySelectorAll("[data-building=fisherman]")]
             const amounts = fishermans.reduce((prev, next)=> {
                 return prev + Number(next.dataset.amount)

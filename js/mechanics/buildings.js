@@ -716,7 +716,17 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             ;
             break;
         case "geologist":
-            if (isCenter) game.cannotUndo = "geologist"
+            if (isCenter && field.dataset.metal !== "stone") {
+                let randomNumber = generateRandomInteger(4);
+                let metal;
+                if (randomNumber === 1) metal = "iron_ore"
+                else if (randomNumber === 2) metal = "coal"
+                else if (randomNumber === 3) metal = "coal"
+                else if (randomNumber === 4) metal = "coins"
+                game.cannotUndo = "geologist"
+                field.dataset.metal = metal
+            }
+                
             if (isCenter && changeCosts) changeBuildingCost(building, "coins", 2, 0)
             break;
         case "ironworks":
@@ -971,7 +981,7 @@ function cancelBuildingMechanic(field, building) {
             break
         case "house":
             const people = field.dataset.amount
-            if (getSeason() === "winter") add("nextResources", "coal", 1);
+            if (getSeason() === "winter") add("nextResources", "coal", -2);
             add("nextResources", "food", people)
             add("resources", "people", -1 * people)
             add("resources", "unemployed", -1 * people)
