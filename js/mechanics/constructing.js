@@ -46,6 +46,7 @@ function undoBuilding(){
     if(game.cannotUndo === "barracks") return displayError("You cannot undo after recruiting.")
 
     fields[game.lastFieldBuildedOn].dataset.building = "none"
+    fields[game.lastFieldBuildedOn].dataset.listener = false
     cancelBuildingMechanic(fields[game.lastFieldBuildedOn], game.lastBuildedBuilding)
 
     game.currentChoosedBuilding = game.lastBuildedBuilding

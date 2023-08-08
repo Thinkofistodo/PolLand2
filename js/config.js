@@ -214,7 +214,7 @@ const saves = {
             cotton: 0,
             fishing_rod: 2,
             flour: 0,
-            food: 15,
+            food: 20,
             hammer: 1,
             horse: 0,
             iron_bar: 0,
@@ -1795,7 +1795,7 @@ const saves = {
         spectatorMode: false,
         turns: goals[0].turns,
         currentSeason: 0,
-        daysToNextSeason: 8,
+        daysToNextSeason: 20,
         tax: tax.taxAmount,
         bandits: {
             banditCamp1: {
