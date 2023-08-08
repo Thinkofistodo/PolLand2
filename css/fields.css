@@ -1403,6 +1403,18 @@
   background-image: url("../src/fields/frozenPlain.jpg");
 }
 
+[data-frozen=summer][data-field=forest] {
+  background-image: url("../src/fields/forest_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills] {
+  background-image: url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain] {
+  background-image: url("../src/fields/plain_s.jpg");
+}
+
 [data-field=plains][data-building=bandit_camp1] {
   background-image: url("../src/buildings/bandit_camp1.png"), url("../src/fields/plains.jpg");
 }
@@ -1485,6 +1497,238 @@
 
 [data-frozen=true][data-field=hills][data-building=bandit_camp3] {
   background-image: url("../src/buildings/bandit_camp3.png"), url("../src/fields/frozenHills.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=house] {
+  background-image: url("../src/buildings/house.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=worker] {
+  background-image: url("../src/buildings/worker.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=town_center] {
+  background-image: url("../src/buildings/town_center.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=church] {
+  background-image: url("../src/buildings/church.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=fisherman] {
+  background-image: url("../src/buildings/fisherman.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=farmland] {
+  background-image: url("../src/buildings/farmland.gif"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=mill] {
+  background-image: url("../src/buildings/mill.gif"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=bakery] {
+  background-image: url("../src/buildings/bakery.gif"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=hunters_hut] {
+  background-image: url("../src/buildings/hunters_hut.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=granary] {
+  background-image: url("../src/buildings/granary.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=lumberjack] {
+  background-image: url("../src/buildings/lumberjack.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=sawmill] {
+  background-image: url("../src/buildings/sawmill.gif"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=cotton_field] {
+  background-image: url("../src/buildings/cotton_field.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=well] {
+  background-image: url("../src/buildings/well.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=geologist] {
+  background-image: url("../src/buildings/geologist.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=mine] {
+  background-image: url("../src/buildings/mine.gif"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=barracks] {
+  background-image: url("../src/buildings/barracks.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=armory] {
+  background-image: url("../src/buildings/armory.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=wall] {
+  background-image: url("../src/buildings/wall.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=border_tower] {
+  background-image: url("../src/buildings/border_tower.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=stable] {
+  background-image: url("../src/buildings/stable.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building="scout's_hut"] {
+  background-image: url("../src/buildings/scout's_hut.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=castle] {
+  background-image: url("../src/buildings/castle.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=armorer] {
+  background-image: url("../src/buildings/armorer.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=mint] {
+  background-image: url("../src/buildings/mint.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=warehouse] {
+  background-image: url("../src/buildings/warehouse.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=smithy] {
+  background-image: url("../src/buildings/smithy.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=ironworks] {
+  background-image: url("../src/buildings/ironworks.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=charcoal] {
+  background-image: url("../src/buildings/charcoal.gif"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=hills][data-building=rope_maker] {
+  background-image: url("../src/buildings/rope_maker.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=house] {
+  background-image: url("../src/buildings/house.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=town_center] {
+  background-image: url("../src/buildings/town_center.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=worker] {
+  background-image: url("../src/buildings/worker.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=fisherman] {
+  background-image: url("../src/buildings/fisherman.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=farmland] {
+  background-image: url("../src/buildings/farmland.gif"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=church] {
+  background-image: url("../src/buildings/church.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=mill] {
+  background-image: url("../src/buildings/mill.gif"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=bakery] {
+  background-image: url("../src/buildings/bakery.gif"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=hunters_hut] {
+  background-image: url("../src/buildings/hunters_hut.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=granary] {
+  background-image: url("../src/buildings/granary.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=cotton_field] {
+  background-image: url("../src/buildings/cotton_field.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=lumberjack] {
+  background-image: url("../src/buildings/lumberjack.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=sawmill] {
+  background-image: url("../src/buildings/sawmill.gif"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=mine] {
+  background-image: url("../src/buildings/mine.gif"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=well] {
+  background-image: url("../src/buildings/well.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=geologist] {
+  background-image: url("../src/buildings/geologist.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=wall] {
+  background-image: url("../src/buildings/wall.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=barracks] {
+  background-image: url("../src/buildings/barracks.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=armory] {
+  background-image: url("../src/buildings/armory.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=border_tower] {
+  background-image: url("../src/buildings/border_tower.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=stable] {
+  background-image: url("../src/buildings/stable.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=armorer] {
+  background-image: url("../src/buildings/armorer.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=mint] {
+  background-image: url("../src/buildings/mint.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=smithy] {
+  background-image: url("../src/buildings/smithy.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=warehouse] {
+  background-image: url("../src/buildings/warehouse.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=charcoal] {
+  background-image: url("../src/buildings/charcoal.gif"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=ironworks] {
+  background-image: url("../src/buildings/ironworks.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-field=plain][data-building=rope_maker] {
+  background-image: url("../src/buildings/rope_maker.png"), url("../src/fields/plain_s.jpg");
 }
 
 /*# sourceMappingURL=fields.css.map */

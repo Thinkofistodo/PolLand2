@@ -86,7 +86,7 @@
   justify-content: space-around;
   border: min(0.4vw, 3px) outset #a56243;
   border-radius: 5px;
-  background-color: #000000c5;
+  background-color: rgba(0, 0, 0, 0.772);
   flex-direction: column;
 }
 

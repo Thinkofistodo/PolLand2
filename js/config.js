@@ -1768,7 +1768,7 @@ const saves = {
             "bakery": [[1,"iron_bar"],[10, "planks"],[6, "stone"]], 
             "brewery": [[10, "wood"],[7, "stone"],[7, "planks"]],  
             "hunters_hut": [[1, "bow"],[8, "planks"]],  
-            "granary": [[15, "planks"],[15, "stone"], [ 4, "iron_bar" ],[15, "wheat"]], 
+            "granary": [[10, "planks"],[10, "stone"], [ 4, "iron_bar" ],[10, "wheat"]], 
             "cotton_field":[[4, "wood"]],
         
             "lumberjack": [ [ 1, "axe" ], [ 5, "wood" ]],     
@@ -1795,7 +1795,7 @@ const saves = {
         spectatorMode: false,
         turns: goals[0].turns,
         currentSeason: 0,
-        daysToNextSeason: 20,
+        daysToNextSeason: 2,
         tax: tax.taxAmount,
         bandits: {
             banditCamp1: {

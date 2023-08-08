@@ -41,6 +41,33 @@ function changeSeason() {
                 field.setAttribute("data-frozen", "false")
             })
         }
+
+        if (getSeason() === "summer") {
+            const farmlands = [...document.querySelectorAll("[data-building=farmland]")]
+            let farmlandsNumber = farmlands.length
+            for (const farmland of farmlands) if (farmland.dataset.waterAccess !== "true") farmlandsNumber--;
+            
+            add("nextResources", "wheat", farmlandsNumber)
+            updateSingleResource("wheat");
+
+            document.querySelectorAll("[data-field]").forEach(field => {
+                field.setAttribute("data-frozen", "summer")
+            })
+        }
+
+        if (getSeason() === "autumn") {
+            const farmlands = [...document.querySelectorAll("[data-building=farmland]")]
+            let farmlandsNumber = farmlands.length
+            for (const farmland of farmlands) if (farmland.dataset.waterAccess !== "true") farmlandsNumber--;
+
+            add("nextResources", "wheat", -farmlandsNumber)
+            updateSingleResource("wheat");
+
+            document.querySelectorAll("[data-field]").forEach(field => {
+                field.setAttribute("data-frozen", "false")
+            })
+        }
+
     }
     setToNextSeasonDays();
 }

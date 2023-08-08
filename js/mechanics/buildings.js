@@ -413,8 +413,9 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             amount = ((countFarmlandsAround - countFarmlandsAround % 2) / 2) + 1
             if (amount > 2) amount = 2
             amount = amount + isOnSwamp + isCottonFieldAround
+            if (getSeason() === "summer") amount++
             if (isWaterAround !== 1) amount = 0
-
+            
             if (changeCosts) add("nextResources", "wheat", amount)
             field.dataset.amount = amount
 

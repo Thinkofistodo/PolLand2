@@ -165,7 +165,7 @@ footer {
 .cancel {
   position: absolute;
   inset: 0 -0.325% 0 -0.325%;
-  background-color: #021623cf;
+  background-color: rgba(2, 22, 35, 0.8117647059);
   z-index: 999;
   display: grid;
   place-items: center;
