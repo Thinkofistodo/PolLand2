@@ -193,7 +193,7 @@ const seasons = [
     ["spring", 8],
     ["summer", 8],
     ["autumn", 8],
-    ["winter", 10]
+    ["winter", 8]
 ] 
 
 // TAXES
@@ -1795,7 +1795,7 @@ const saves = {
         spectatorMode: false,
         turns: goals[0].turns,
         currentSeason: 0,
-        daysToNextSeason: 2,
+        daysToNextSeason: 8,
         tax: tax.taxAmount,
         bandits: {
             banditCamp1: {
