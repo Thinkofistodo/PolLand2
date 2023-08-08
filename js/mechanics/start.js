@@ -19,6 +19,7 @@ function startGame(save) {
         setBanditCamps()
         changeColorOfResources(true)
         inGameSettings = true
+        isResourceDialogOpen = false
         if (save === "reset") createTextDialog(storyIntroduction.title, storyIntroduction.text, true)
         if (save === "reset") createQuestionDialog("Do you want to view the tutorial?", false, ()=> {
             createDialogsChain(tutorialTitles, tutorialTexts, 0, 5)
