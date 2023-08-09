@@ -39,6 +39,7 @@ function newTurn() {
         if (game.resources[resource] !== last) game.changedThisTurn.push(resource)
     }
     if (game.cannotUndo !== "nothing") game.cannotUndo = "turn"
+    
     createResourcesDialog(overflowingResources, overflowingAmount)
     updateWhatChanged()
     updateRandomTrades()
@@ -63,7 +64,20 @@ function newTurn() {
     }, 2000)
     checkIfEvent()
     checkIfGoalAchieved();
+
+    if (game.currentDay % 10 === 0) {
+        const kingsTaxAmount = document.querySelectorAll("[data-building=house]").length
+        add("resources", "coins", -1 * kingsTaxAmount)
+    }
+
     if(checkIfDefeat()) return
+
+    if (game.currentDay % 10 === 0) {
+        const kingsTaxAmount = document.querySelectorAll("[data-building=house]").length
+        createDefaultEventDialog("Payment of Tax", "A messenger from the royal treasury has come forth, seeking to gather the rightful taxation. Prepare, good citizens, to offer the due tribute to the treasury's envoy.", {
+            coins: -kingsTaxAmount
+        })
+    }
     setStoryEvent()
     setTurnNumber();
     checkPeopleNumber()

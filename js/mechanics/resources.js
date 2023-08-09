@@ -4,7 +4,7 @@ function add(type, name, amount) {
         game.resources[name] = game.maxResources[name]
     }
 
-    if (game.resources[name] < 0 && name !== "food") game.resources[name] = 0;
+    if (game.resources[name] < 0 && (name !== "food" && name !== "coins")) game.resources[name] = 0;
 
     game.changedThisTurn.push(name)
 }
@@ -18,7 +18,7 @@ function addResources(resources) {
             game.resources[resource] = game.maxResources[resource]
         }
 
-        if (game.resources[resource] < 0 && resource !== "food") game.resources[resource] = 0;
+        if (game.resources[resource] < 0 && (resource !== "food" && resource !== "coins")) game.resources[resource] = 0;
 
         game.changedThisTurn.push(resource)
 
@@ -145,7 +145,7 @@ function getTypeResource(type, resource) {
 }
 
 function checkPeopleNumber() {
-    if ((game.resources.people - 25 * game.tax) >= tax.peopleNeededForTax)
+    if ((game.resources.people - 11 * game.tax) >= tax.peopleNeededForTax)
         add("nextResources", "coins", tax.taxAmount);
     updateSingleResource("coins");
 

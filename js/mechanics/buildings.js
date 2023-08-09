@@ -518,10 +518,10 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             }
 
             if (isCenter && changeCosts) {
-                changeBuildingCost(building, "planks", 2, 0)
-                changeBuildingCost(building, "stone", 2, 1)
+                changeBuildingCost(building, "planks", 5, 0)
+                changeBuildingCost(building, "stone", 5, 1)
                 changeBuildingCost(building, "iron_bar", 1, 2)
-                changeBuildingCost(building, "wheat", 4, 3)
+                changeBuildingCost(building, "wheat", 5, 3)
             }
             break;
         case "hunters_hut":
@@ -1049,10 +1049,10 @@ function cancelBuildingMechanic(field, building) {
             add("maxResources", "wheat", -15)
             add("maxResources", "food", -15)
             add("maxResources", "flour", -10)
-            changeBuildingCost(building, "planks", -2, 0)
-            changeBuildingCost(building, "stone", -2, 1)
+            changeBuildingCost(building, "planks", -5, 0)
+            changeBuildingCost(building, "stone", -5, 1)
             changeBuildingCost(building, "iron_bar", -1, 2)
-            changeBuildingCost(building, "wheat", -4, 3)
+            changeBuildingCost(building, "wheat", -5, 3)
             break;
         case "hunters_hut":
             add("nextResources", "leather", -1 * Number(field.dataset.amount2))

@@ -143,7 +143,7 @@ const goals = [
             ["resources", "wood", 40],
             ["resources", "stone", 40],
         ],
-        text: {title: "Well done, my Lord!", body: "Now we'll be able to allocate these resources for the construction of other, more vital infrastructures. I believe the upcoming winter is our foremost concern. Fields and fishermen cannot work in the snow, so we must gather supplies and rely on hunters. Collecting 70 units of food, 40 sacks of flour, and 40 wheat should ensure that no one will starve. We don't have much time, but I believe we can achieve it."},
+        text: {title: "Well done, my Lord!", body: "Now we'll be able to allocate these resources for the construction of other, more vital infrastructures. I believe the upcoming winter is our foremost concern. Fields and fishermen cannot work in the snow, so we must gather supplies and rely on hunters. Collecting 60 units of food, 30 sacks of flour, and 30 wheat should ensure that no one will starve. We don't have much time, but I believe we can achieve it."},
         todo: "Gather 40 wood and 40 stones.",
         turns: 40,
     },
@@ -151,13 +151,13 @@ const goals = [
     {
         type: "resourceGoal", 
         materials: [
-            ["resources", "wheat", 70],
-            ["resources", "flour", 40],
-            ["resources", "food", 40],
+            ["resources", "wheat", 30],
+            ["resources", "flour", 30],
+            ["resources", "food", 60],
         ],
         text: {title: "Excellent! Food supplies secured!", body: "Thanks to them, winter won't be a bigger problem for us. However, it's not the only thing to worry about. We've received news that new bandits roam the nearby forests. Probably upon hearing about the new settlement, they see it as an easy target and plan to rob us of our hard work. We cannot allow that! I suggest recruiting a small force of 7 knights and 4 archers. Given the situation, it would be wise to recruit a few Hewers in the meantime, but keep in mind our finances are limited. We could increase our income if only we had more inhabitants, churches, or gold mines..."},
-        todo: "Collect 70 units of food, 40 sacks of flour, and 40 wheat.",
-        turns: 40,
+        todo: "Collect 60 units of food, 30 sacks of flour, and 30 wheat.",
+        turns: 25,
     },
     {
         type: "resourceGoal", 
@@ -167,7 +167,9 @@ const goals = [
         ],
         text: {title: "I'm sorry to say, but I bring dire news...", body: "Our forces could easily deter common bandits. However, I regret to inform you that these are no ordinary miscreants. The royal scout reports that they are a much more dangerous, organized group. If we allow them to roam unchecked for too long, there's a chance we won't be able to repel their attack even with the help of all the local inhabitants. Therefore, we must execute a preemptive strike! According to the intelligence, their forces are located in three different camps; we need to find and destroy them! However, let's bear in mind that smaller groups of other marauders might harass us, taking advantage of our engagement..."},
         todo: "Find and destroy 3 bandit camps",
-        turns: 40,
+        turns: 25,
+    },{
+        turns: 30
     }
 ]
 
@@ -198,7 +200,7 @@ const seasons = [
 
 // TAXES
 const tax = {
-    peopleNeededForTax: 20,
+    peopleNeededForTax: 15,
     taxAmount: 2,
 }
 
@@ -214,7 +216,7 @@ const saves = {
             cotton: 0,
             fishing_rod: 2,
             flour: 0,
-            food: 20,
+            food: 15,
             hammer: 1,
             horse: 0,
             iron_bar: 0,

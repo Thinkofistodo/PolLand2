@@ -32,6 +32,27 @@ const events = {
                 wheat: 2,
                 cotton: 2,
             }
+        }, {
+            title: "Accident in the Mine",
+            text: "Deep within the dimly lit mine, an offshoot suddenly crumbled, causing a moment of panic. Miraculously, all miners emerged unscathed, though a portion of valuable resources remained buried beneath the debris, a testament to their unwavering resilience in the face of adversity.",
+            resources: {
+                iron_ore: -3,
+                coal: -2,
+                stone: -4
+            }
+        }, {
+            title: "Cable Breaks, Bridge Falls",
+            text: "As the sun bathed the scene in warmth, an abrupt crack shattered the tranquility. The bridge's cable, fatigued by time, snapped, and the bridge plunged into the river's embrace. A once-vital link now rested beneath the currents, leaving a community in quiet reflection.",
+            resources: {
+                rope: -2,
+                planks: -5
+            }
+        }, {
+            title: "Reimbursement of Tax Surplus",
+            text: "A representative from the Royal Treasury has arrived at our village. He conveyed that there was an error in calculating the due tribute to the king, and upon reevaluation, it was revealed that we had paid too much. Consequently, he is returning the excess amount to us.",
+            resources: {
+                coins: 5,
+            }
         }
     ],
 

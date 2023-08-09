@@ -31,8 +31,7 @@ function createTextDialog(title, content, isThisFirstDialog, callback){
 function createDefaultEventDialog(title, text, resources) {
     if (!title) {
         let eventID = generateRandomInteger(events.default.length) - 1
-        // Ostatni cel nie ma tylko minusów, zmienić później jak będzie więcej pozytywnych celów
-        if (game.currentGoal === 0) eventID = events.default.length - 1
+        if (game.currentGoal === 0) eventID = generateRandomIntegerMinMax(2,5)
         title = events.default[eventID].title
         text = events.default[eventID].text
         resources = events.default[eventID].resources
