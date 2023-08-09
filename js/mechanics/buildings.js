@@ -716,7 +716,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             ;
             break;
         case "geologist":
-            if (isCenter && field.dataset.metal !== "stone") {
+            if (isCenter && field.dataset.metal !== "coal" && field.dataset.metal !== "coins" && field.dataset.metal !== "iron_ore" && changeCosts) {
                 let randomNumber = generateRandomInteger(4);
                 let metal;
                 if (randomNumber === 1) metal = "iron_ore"
