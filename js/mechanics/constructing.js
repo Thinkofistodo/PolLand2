@@ -50,7 +50,7 @@ function undoBuilding(){
     cancelBuildingMechanic(fields[game.lastFieldBuildedOn], game.lastBuildedBuilding)
 
     game.currentChoosedBuilding = game.lastBuildedBuilding
-    if(game.currentChoosedBuilding !== "house") add("resources", "unemployed", 1)
+    if (game.currentChoosedBuilding !== "house") add("resources", "unemployed", 1)
     add("resources", "workers", 1)
     changeResources(true)
 

@@ -34,7 +34,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
         case "house":
 
             if (!isCenter && changeCosts) break
-            amount = 4, countMinesAround = 0, countHousesAround = 0;
+            amount = 5, countMinesAround = 0, countHousesAround = 0;
             isWaterAround = 0
             if (getSeason() === "winter") add("nextResources", "coal", -1);
             for (const nearbyFieldID of nearbyFieldsID) {
@@ -51,7 +51,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (amount < 0) amount = 0
             field.dataset.amount = ++amount
             if (changeCosts) {
-                add("nextResources", "food", -1 * amount)
+                add("nextResources", "food", -4)
                 add("resources", "people", amount)
                 add("resources", "unemployed", amount)
             }
@@ -982,7 +982,7 @@ function cancelBuildingMechanic(field, building) {
         case "house":
             const people = field.dataset.amount
             if (getSeason() === "winter") add("nextResources", "coal", -2);
-            add("nextResources", "food", people)
+            add("nextResources", "food", 4)
             add("resources", "people", -1 * people)
             add("resources", "unemployed", -1 * people)
             changeBuildingCost(building, "planks", -2, 0)

@@ -1764,7 +1764,7 @@ const saves = {
             "stable": [ [ 15, "wood" ]],
             "marketplace": [ [ 3, "rope" ], [ 5, "wood" ],  [ 15, "planks" ] ],
         
-            "fisherman": [[1,"fishing_rod"],[7, "wood"]],  
+            "fisherman": [[1,"fishing_rod"],[4, "wood"]],  
             "farmland": [[3, "planks"]], 
             "mill": [[5, "wood"], [15, "stone"]],  
             "bakery": [[1,"iron_bar"],[10, "planks"],[6, "stone"]], 
@@ -2017,7 +2017,7 @@ const tutorialTitles = [
     ]
 
 const tutorialTexts = [
-    "Winning condition is the fulfillment of all objectives. You have a specified number of turns to complete each of them; if you fail to accomplish the assigned task within this time, you lose. You can track the remaining number of turns in the clock located in the bottom right corner. <br><br>Another condition for losing is when, after clicking the next turn button, your food indicator drops below zero or the amount of coal needed to heat up houses in winter will not be provided.",
+    "Winning condition is the fulfillment of all objectives. You have a specified number of turns to complete each of them; if you fail to accomplish the assigned task within this time, you lose. You can track the remaining number of turns in the clock located in the bottom right corner. <br><br>Another condition for losing is when, after clicking the next turn button, your food indicator drops below zero or the amount of coal needed to heat up houses in winter will not be provided.<br> Every 10 days, you must pay a tax - the number of coins equal to the number of houses you possess",
     "During the winter, the farmlands, cotton fields, and fishermen do not work. Remember to gather the necessary supplies before this period.<br><br> You start in the spring; to know how many turns are left until the next season, click on the clock in the bottom right corner. When you do this, it will turn around to show the remaining turns.",
     "To construct a building, you will need (in addition to the required resources) one unemployed person (second icon from the top in the upper right corner) and one builder (third icon from the top in the upper right corner).<br><br> To increase number of unemployed, build houses, but remember that each person requires one unit of food per turn. Builders can construct only one building per day. After clicking the next turn button, they will be ready to work again. You can increase their numbers by constructing worker huts.",
     "Buildings in the town are divided into two types. The first type consists of automatically functioning structures, while the second type requires manual interaction. Automatic buildings are highlighted in blue on the bottom bar, while manual ones appear in yellow. <br><br>Certain buildings require water to operate effectively. Therefore, it is essential to construct them near water sources, such as fields with water or within the vicinity of a well that irrigates fields in a two-tile radius.",
