@@ -629,7 +629,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 removeAmounts(field, building);
             }
             // using lumberjacks variable but counting bakeries, dont want to make another one
-            amount = 4, trade = "11", isWaterAround = 0, isMillAround = 0, countLumberjacksAround = 0;
+            amount = 4, trade = "12", isWaterAround = 0, isMillAround = 0, countLumberjacksAround = 0;
             for (const nearbyFieldID of nearbyFieldsID) {
                 if (fields[ID + nearbyFieldID].dataset.building === "mill") isMillAround = 1;
                 if (fields[ID + nearbyFieldID].dataset.building === "bakery") countLumberjacksAround = 1
@@ -643,7 +643,7 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (field.dataset.waterAccess === "true") isWaterAround = 1;
             if (countLumberjacksAround === 1) amount += 2;
 
-            if (isMillAround) trade = "12"
+            if (isMillAround) trade = "13"
             if (field.dataset.field === "swamp") amount -= 2
             if (isWaterAround === 0) amount = 0
 

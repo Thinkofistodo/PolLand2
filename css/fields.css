@@ -1731,4 +1731,52 @@
   background-image: url("../src/buildings/rope_maker.png"), url("../src/fields/plain_s.jpg");
 }
 
+[data-frozen=summer][data-building=geologist][data-metal=coins][data-field=plain] {
+  background-image: url("../src/buildings/geologist_gold.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-building=geologist][data-metal=coins][data-field=hills] {
+  background-image: url("../src/buildings/geologist_gold.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-building=geologist][data-metal=coal][data-field=plain] {
+  background-image: url("../src/buildings/geologist_coal.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-building=geologist][data-metal=coal][data-field=hills] {
+  background-image: url("../src/buildings/geologist_coal.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=summer][data-building=geologist][data-metal=iron_ore][data-field=plain] {
+  background-image: url("../src/buildings/geologist_iron.png"), url("../src/fields/plain_s.jpg");
+}
+
+[data-frozen=summer][data-building=geologist][data-metal=iron_ore][data-field=hills] {
+  background-image: url("../src/buildings/geologist_iron.png"), url("../src/fields/hills_s.jpg");
+}
+
+[data-frozen=true][data-building=geologist][data-metal=coins][data-field=plain] {
+  background-image: url("../src/buildings/geologist_gold.png"), url("../src/fields/frozenPlain.jpg");
+}
+
+[data-frozen=true][data-building=geologist][data-metal=coins][data-field=hills] {
+  background-image: url("../src/buildings/geologist_gold.png"), url("../src/fields/frozenHills.jpg");
+}
+
+[data-frozen=true][data-building=geologist][data-metal=coal][data-field=plain] {
+  background-image: url("../src/buildings/geologist_coal.png"), url("../src/fields/frozenPlain.jpg");
+}
+
+[data-frozen=true][data-building=geologist][data-metal=coal][data-field=hills] {
+  background-image: url("../src/buildings/geologist_coal.png"), url("../src/fields/frozenHills.jpg");
+}
+
+[data-frozen=true][data-building=geologist][data-metal=iron_ore][data-field=plain] {
+  background-image: url("../src/buildings/geologist_iron.png"), url("../src/fields/frozenPlain.jpg");
+}
+
+[data-frozen=true][data-building=geologist][data-metal=iron_ore][data-field=hills] {
+  background-image: url("../src/buildings/geologist_iron.png"), url("../src/fields/frozenHills.jpg");
+}
+
 /*# sourceMappingURL=fields.css.map */
