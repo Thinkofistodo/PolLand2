@@ -76,6 +76,10 @@ function newTurn() {
     setStoryEvent()
     setTurnNumber();
     checkPeopleNumber()
+
+    for (const marketplace of document.querySelectorAll("[data-marketplace]")) {
+        marketplace.dataset.marketplace = generateRandomIntegerMinMax(1,4);
+    }
 }
 
 function setTurnNumber() {

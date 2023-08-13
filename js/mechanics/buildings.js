@@ -1108,6 +1108,7 @@ function cancelBuildingMechanic(field, building) {
             game.trades.pop();
             game.marketplaces--;
             if (isCenter && changeCosts) {
+                field.dataset.marketplace = generateRandomIntegerMinMax(1,4);
                 changeBuildingCost(building, "rope", -1, 0)
                 changeBuildingCost(building, "wood", -2, 1)
                 changeBuildingCost(building, "planks", -1, 2)

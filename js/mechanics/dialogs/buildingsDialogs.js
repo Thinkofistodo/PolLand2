@@ -79,9 +79,9 @@ function buyButtonsADDFUN(dialog){
                     + (quantity === "all" 
                         ? game.production[building][trade].currentAmount 
                         : Number(quantity))
-                    * Number(trade.at(-1)) 
+                    * Number(trade.at(-1))
 
-                    > game.maxResources[resource]
+                    > game.maxResources[resource] + Number(trade.at(-1)) 
                 ) return displayError("Can't produce more resources than your maximum space")
 
                 // take input resources
