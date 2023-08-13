@@ -430,14 +430,17 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 if (fields[ID + nearbyFieldID].dataset.field === "water") isWaterAround += 1
                 if (fields[ID + nearbyFieldID].dataset.building === "fisherman") countFishermansAround++
             }
+
             if (field.dataset.field === "swamp") isOnSwamp = 1
             amount = 3 - countFishermansAround * 2 + isOnSwamp;
             if (isWaterAround >= 3) amount++;
             if (isWaterAround === 0 || amount < 0) amount = 0;
             if (!isWaterAround) field.dataset.isFish = false
             field.dataset.amount = amount
+
             if (changeCosts) add("nextResources", "food", amount)
-            if (getSeason() === "winter" && changeCosts) add("nextResources", "food", -1 * amount)
+
+            if (getSeason() === "winter" && changeCosts && isCenter) add("nextResources", "food", -1 * amount)
 
             if (isCenter && changeCosts) changeBuildingCost(building, "wood", 2, 1)
             break;
