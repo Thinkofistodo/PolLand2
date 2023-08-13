@@ -507,20 +507,10 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (isCenter && changeCosts) changeBuildingCost(building, "wood", 2, 0)
             break
         case "granary":
-            if (!isCenter && changeCosts) {
-                add("maxResources", "wheat", -15)
-                add("maxResources", "food", -10)
-                add("maxResources", "flour", -15)
-            }
-
-
-            if (changeCosts) {
+            if (isCenter && changeCosts) {
                 add("maxResources", "wheat", 15)
                 add("maxResources", "flour", 10)
                 add("maxResources", "food", 15)
-            }
-
-            if (isCenter && changeCosts) {
                 changeBuildingCost(building, "planks", 5, 0)
                 changeBuildingCost(building, "stone", 5, 1)
                 changeBuildingCost(building, "iron_bar", 1, 2)
@@ -1050,8 +1040,8 @@ function cancelBuildingMechanic(field, building) {
             break;
         case "granary":
             add("maxResources", "wheat", -15)
-            add("maxResources", "food", -15)
             add("maxResources", "flour", -10)
+            add("maxResources", "food", -15)
             changeBuildingCost(building, "planks", -5, 0)
             changeBuildingCost(building, "stone", -5, 1)
             changeBuildingCost(building, "iron_bar", -1, 2)

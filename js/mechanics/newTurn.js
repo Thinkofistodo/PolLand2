@@ -65,11 +65,6 @@ function newTurn() {
     checkIfEvent()
     checkIfGoalAchieved();
 
-    if (game.currentDay % 10 === 0) {
-        const kingsTaxAmount = document.querySelectorAll("[data-building=house]").length
-        add("resources", "coins", -1 * kingsTaxAmount)
-    }
-
     if(checkIfDefeat()) return
 
     if (game.currentDay % 10 === 0) {

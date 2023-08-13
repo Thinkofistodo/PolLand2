@@ -491,3 +491,19 @@
 [data-frozen=true][data-building=geologist][data-metal=coal][data-field=hills]{background-image: url("../src/buildings/geologist_coal.png"), url("../src/fields/frozenHills.jpg")}
 [data-frozen=true][data-building=geologist][data-metal=iron_ore][data-field=plain]{background-image: url("../src/buildings/geologist_iron.png"), url("../src/fields/frozenPlain.jpg")}
 [data-frozen=true][data-building=geologist][data-metal=iron_ore][data-field=hills]{background-image: url("../src/buildings/geologist_iron.png"), url("../src/fields/frozenHills.jpg")}
+
+// WATER ACCES AGAIN
+[data-frozen=summer][data-water-access=false][data-field=plain][data-building=farmland]{background-image: url("../src/fields/noWater2.gif"),  url("../src/buildings/farmland.gif"), url("../src/fields/plain_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=hills][data-building=farmland]{background-image: url("../src/fields/noWater2.gif"),  url("../src/buildings/farmland.gif"), url("../src/fields/hills_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=plain][data-building=bakery]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/bakery.gif"), url("../src/fields/plain_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=hills][data-building=bakery]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/bakery.gif"), url("../src/fields/hills_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=plain][data-building=cotton_field]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/cotton_field.gif"), url("../src/fields/plain_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=hills][data-building=cotton_field]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/cotton_field.gif"), url("../src/fields/hills_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=plain][data-building=rope_maker]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/rope_maker.png"), url("../src/fields/plain_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=hills][data-building=rope_maker]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/rope_maker.png"), url("../src/fields/hills_s.jpg")}
+[data-frozen=summer][data-is-fish=false][data-field=plain][data-building=fisherman]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/fisherman.png"), url("../src/fields/plain_s.jpg")}
+[data-frozen=summer][data-is-fish=false][data-field=hills][data-building=fisherman]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/fisherman.png"), url("../src/fields/hills_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=plain][data-building=smithy]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/smithy.png"), url("../src/fields/plain_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=hills][data-building=smithy]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/smithy.png"), url("../src/fields/hills_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=plain][data-building=ironworks]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/ironworks.png"), url("../src/fields/plain_s.jpg")}
+[data-frozen=summer][data-water-access=false][data-field=hills][data-building=ironworks]{background-image: url("../src/fields/noWater2.gif"), url("../src/buildings/ironworks.png"), url("../src/fields/hills_s.jpg")}
