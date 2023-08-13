@@ -1,5 +1,6 @@
 function startGame(save) {
     game = JSON.parse(JSON.stringify(saves[save]))
+    if (generateRandomInteger(2) === 2 && save === "reset") game.map = secondMap
     loadingScreen()
 
     hideMenu()
