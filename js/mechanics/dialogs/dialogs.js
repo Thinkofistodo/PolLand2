@@ -186,7 +186,7 @@ function createResourcesDialog(overflowingResources, overflowingAmount){
     `
     <h1 class="dialog_single-title">Resources</h1>
     <div class="dialog_single-content">
-    ${content || "You REALLYdidn't get ANYTHING? Damn, bro"} 
+    ${content || "You REALLY didn't get ANYTHING? Damn, bro"} 
     </div>
     <div class="dialog_single-footer"> 
         <button class="dialog_single-closeButton">close</button>
