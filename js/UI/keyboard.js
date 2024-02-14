@@ -33,6 +33,10 @@ function keyCheck(e){
 
     // SWITCHING BUILDINGS SECTION
     const id = Number(e.key)
+    changeBuildingSection(id)
+}
+
+function changeBuildingSection(id) {
     if (id > 0 && id < 5) {
         if (currentSection != id) {
             changeButtonAppearance(id < currentSection)
@@ -43,3 +47,4 @@ function keyCheck(e){
         return
     }
 }
+

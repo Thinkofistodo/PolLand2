@@ -21,6 +21,7 @@ function startGame(save) {
         inGameSettings = true
         isResourceDialogOpen = false
         game.cannotUndo = "nothing"
+        changeBuildingSection(3)
         if (save === "reset") createTextDialog(storyIntroduction.title, storyIntroduction.text, true)
         if (save === "reset") createQuestionDialog("Do you want to view the tutorial?", false, ()=> {
             createDialogsChain(tutorialTitles, tutorialTexts, 0, 5)
