@@ -33,7 +33,8 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             if (game.buildingsCosts[`${building}`][0][0] === 0) {
                 game.cannotUndo = "free";
-                game.buildingsCosts["lumberjack"] = [ [ 1, "axe" ], [ 6, "wood" ]];  
+                setBuildingCost(building, "axe", 1, 0)
+                setBuildingCost(building, "wood", 6, 1)
                 break;
             };
 
@@ -273,7 +274,8 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             if (game.buildingsCosts[`${building}`][0][0] === 0) {
                 game.cannotUndo = "You can't undo free buildings";
-                game.buildingsCosts["sawmill"] = [ [ 1, "saw" ],  [ 9, "wood" ] ];
+                setBuildingCost(building, "saw", 1, 0)
+                setBuildingCost(building, "wood", 9, 1)
                 break;
             };
 
@@ -326,7 +328,9 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
 
             if (game.buildingsCosts[`${building}`][0][0] === 0) {
                 game.cannotUndo = "You can't undo free buildings";
-                game.buildingsCosts["mine"] = [ [1, "pickaxe"],[ 8, "planks" ], [ 8, "stone" ]];
+                setBuildingCost(building, "pickaxe", 1, 0)
+                setBuildingCost(building, "planks", 8, 1)
+                setBuildingCost(building, "stone", 8, 2)
                 break;
             };
 
@@ -1155,6 +1159,10 @@ function cancelBuildingMechanic(field, building) {
 
 function changeBuildingCost(building, resource, amount, index) {
     document.querySelector(`#${building}_${resource}`).innerText = game.buildingsCosts[`${building}`][index][0] += amount
+}
+
+function setBuildingCost(building, resource, amount, index) {
+    document.querySelector(`#${building}_${resource}`).innerText = game.buildingsCosts[`${building}`][index][0] = amount
 }
 
 function isThisField(field, name) {
