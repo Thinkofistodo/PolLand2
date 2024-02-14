@@ -41,6 +41,7 @@ function undoBuilding(){
     if(game.cannotUndo === "turn") return displayError("You can only undo a construction you made in the current turn.")
     if(game.cannotUndo === "nothing") return displayError("You haven't build anything yet.")
     if(game.cannotUndo === "no") return displayError("You cannot undo the construction of more than one building")
+    if(game.cannotUndo === "free") return displayError("You can't undo free buildings")
     if(game.cannotUndo === "trade") return displayError("You cannot undo the building after you traded")
     if(game.cannotUndo === "geologist") return displayError("You cannot undo after placing geologist")
     if(game.cannotUndo === "barracks") return displayError("You cannot undo after recruiting.")
@@ -79,13 +80,5 @@ function buildingsEventsADDFUN(){
 
     }
     
-
-    // STARTING TOWN CENTER ADD FUNCTIOANLITY
-    // fields[712].addEventListener("click", () => {
-    //     createBuildingDialog(fields[712])
-    //     playClick()
-    // })
-    // fields[712].dataset.listener = "true"
-
     cancel.addEventListener("click", cancelBuilding)
 }

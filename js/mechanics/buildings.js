@@ -16,6 +16,8 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             break;
         case "lumberjack":
             if (!isCenter && changeCosts) add("nextResources", "wood", -1 * Number(field.dataset.amount))
+            
+            
 
             amount = 2, countForestFieldsAround = 0, countLumberjacksAround = 0;
             for (const nearbyField of nearbyFieldsID) {
@@ -28,6 +30,12 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
             if (amount < 0) amount = 0
             field.dataset.amount = amount
             if (changeCosts) add("nextResources", "wood", amount)
+
+            if (game.buildingsCosts[`${building}`][0][0] === 0) {
+                game.cannotUndo = "free";
+                game.buildingsCosts["lumberjack"] = [ [ 1, "axe" ], [ 6, "wood" ]];  
+                break;
+            };
 
             if (isCenter && changeCosts) changeBuildingCost(building, "wood", 1, 1)
             break
@@ -263,6 +271,12 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 }
             })
 
+            if (game.buildingsCosts[`${building}`][0][0] === 0) {
+                game.cannotUndo = "You can't undo free buildings";
+                game.buildingsCosts["sawmill"] = [ [ 1, "saw" ],  [ 9, "wood" ] ];
+                break;
+            };
+
             if (isCenter && changeCosts) changeBuildingCost(building, "wood", 1, 1)
             
             break
@@ -309,6 +323,12 @@ function buildingMechanic(field, building, isCenter, changeCosts = true) {
                 if (whatIsBeingMined !== "stone") add("nextResources", "stone", 1)
                 add("nextResources", whatIsBeingMined, amount)
             }
+
+            if (game.buildingsCosts[`${building}`][0][0] === 0) {
+                game.cannotUndo = "You can't undo free buildings";
+                game.buildingsCosts["mine"] = [ [1, "pickaxe"],[ 8, "planks" ], [ 8, "stone" ]];
+                break;
+            };
 
             if (isCenter && changeCosts) {
                 changeBuildingCost(building, "planks", 2, 1)

@@ -209,7 +209,7 @@ const saves = {
     reset: {
         // DEFAULT STATE OF RESOURCES IN THE GAME
         resources: {
-            axe: 2,
+            axe: 1,
             bow: 1,
             coal: 5,
             coins: 18,
@@ -223,10 +223,10 @@ const saves = {
             iron_ore: 0,
             leather: 0,
             people: 11,
-            pickaxe: 2,
+            pickaxe: 1,
             planks: 10,
             rope: 0,
-            saw: 1,
+            saw: 0,
             string: 0,
             stone: 10,
             swords: 0,
@@ -1773,9 +1773,15 @@ const saves = {
             "granary": [[10, "planks"],[10, "stone"], [ 4, "iron_bar" ],[10, "wheat"]], 
             "cotton_field":[[4, "wood"]],
         
-            "lumberjack": [ [ 1, "axe" ], [ 5, "wood" ]],     
-            "sawmill": [ [ 1, "saw" ],  [ 8, "wood" ] ],        
-            "mine": [ [1, "pickaxe"],[ 6, "planks" ], [ 6, "stone" ]],
+            // "lumberjack": [ [ 1, "axe" ], [ 5, "wood" ]],     
+            "lumberjack": [ [ 0, "axe" ], [ 0, "wood" ]],     
+
+            // "sawmill": [ [ 1, "saw" ],  [ 8, "wood" ] ],        
+            "sawmill": [ [ 0, "saw" ],  [ 0, "wood" ] ],        
+
+            // "mine": [ [1, "pickaxe"],[ 6, "planks" ], [ 6, "stone" ]],
+            "mine": [ [0, "pickaxe"],[ 0, "planks" ], [ 0, "stone" ]],
+
             "well": [ [3, "rope"],[ 2, "wood" ], [ 2, "planks" ], [ 5, "stone" ] ],     
             "geologist": [[ 6, "coins" ]],           
             "rope_maker": [ [ 4, "leather" ], [ 4, "wood" ],  [ 6, "planks" ]],
