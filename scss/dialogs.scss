@@ -9,7 +9,7 @@
 
     display: flex;
     flex-direction: column;
-    background-image: url("../src/backgrounds/loading2.jpg");
+    background-image: url("../src/backgrounds/loading2.webp");
     background-size: cover;
     background-position: center;
     z-index: 999;
@@ -120,7 +120,7 @@
 .dialog_chain {
   padding: .5rem 1rem 1rem 1rem;
   font-size: clamp(0.19rem, calc(-0.02rem + 1.06vw), 1.25rem);
-  background-image: url("../src/backgrounds/loading2.jpg");
+  background-image: url("../src/backgrounds/loading2.webp");
 
     &-titles--Container {
         text-transform: uppercase;
@@ -325,7 +325,7 @@
 .dialog_event {
   background-image: none;
   background-color: #00000000;
-  background-image: url("../src/backgrounds/loading2.jpg");
+  background-image: url("../src/backgrounds/loading2.webp");
   color: rgb(27, 24, 24);
   border-left-color: $button-top-left-border;
   border-top-color: $button-top-left-border;

@@ -1,6 +1,6 @@
 .dialog_towncenter {
   display: block;
-  background-image: url("../src/backgrounds/bg0.png");
+  background-image: url("../src/backgrounds/bg0.webp");
 }
 .dialog_towncenter .dialog_building-content {
   width: 100%;

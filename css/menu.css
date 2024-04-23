@@ -56,7 +56,7 @@
 .menu_dialog {
   position: absolute;
   inset: 0;
-  background-image: url("../src/backgrounds/loading.jpg");
+  background-image: url("../src/backgrounds/loading.webp");
   background-size: cover;
   opacity: 0;
   z-index: -999;

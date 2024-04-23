@@ -7,7 +7,7 @@
   width: 60%;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.3882352941);
-  background-image: url("../src/backgrounds/bg2.jpg");
+  background-image: url("../src/backgrounds/bg2.webp");
   background-position: center;
   background-size: cover;
   border: min(0.5vw, 5px) inset #773421;
